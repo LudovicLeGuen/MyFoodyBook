@@ -1,7 +1,7 @@
 ---
 name: USER STORY TEMPLATE
 about: User stories
-title: ''
+title: 'USER STORY: <TITLE>'
 labels: ''
 assignees: ''
 
