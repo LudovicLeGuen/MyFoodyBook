@@ -1,0 +1,1 @@
+web: gunicorn my_foody_book.wsgi
