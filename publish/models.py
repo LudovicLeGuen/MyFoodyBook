@@ -48,7 +48,7 @@ class Recipe(models.Model):
 class Comment(models.Model):
     """
     Comment model.
-    Assigns fields and methods for the comment model.
+   
     """
 
     recipe = models.ForeignKey(
