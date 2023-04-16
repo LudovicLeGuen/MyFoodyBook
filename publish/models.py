@@ -47,10 +47,9 @@ class Recipe(models.Model):
 
 class Comment(models.Model):
     """
-    Comment model.
-   
-    """
+    Comment model class.
 
+    """
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name="comments"
         )
