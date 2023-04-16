@@ -1,108 +1,208 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# My-foody-book
+![Abyss diving club on devices](assets/readme-files/wheel-of-fortune.PNG)
 
-Welcome LudovicLeGuen,
+[Click here to access live project](https://the-wheel-of-fortune.herokuapp.com/)
+## Table of contents
+1. [Introduction](#Introduction)
+2. [UX](#UX)
+    1. [Ideal User Demographic](#Ideal-User-Demographic)
+    2. [User Stories](#User-Stories)
+    3. [Development Planes](#Development-Planes)
+    4. [Design](#Design)
+3. [Features](#Features)
+    1. [Design Features](#Design-Features) 
+    2. [Existing Features](#Existing-Features)
+    3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+4. [Issues and Bugs](#Issues-and-Bugs)
+5. [Technologies Used](#Technologies-Used)
+     1. [Main Languages Used](#Main-Languages-Used)
+     3. [Frameworks, Libraries & Programs Used](#Frameworks,-Libraries-&-Programs-Used)
+6. [Testing](#Testing)
+     1. [Testing.md](TESTING.md)
+7. [Deployment](#Deployment)
+     1. [Deploying on GitHub Pages](#Deploying-on-GitHub-Pages)
+8. [Credits](#Credits)
+     1. [Media](#Media)
+     2. [Code](#Code)
+9. [Acknowledgements](#Acknowledgements)
+***
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+[Back to top ⇧](#Wheel-Of-Fortune)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
+### Ideal User Demographic
 
-`python3 -m http.server`
+### User-Stories
+#### Frequent User Goals
+* 
 
-A blue button should appear to click: _Make Public_,
+#### New User Goals
+* 
 
-Another blue button should appear to click: _Open Browser_.
+[Back to top ⇧](#Wheel-Of-Fortune)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Development-Planes
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+#### Strategy
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    
+#### Scope
 
-To log into the Heroku toolbelt CLI:
+#### Scope
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<details>
+<summary>Pre game flowchart</summary>
+    
+![Pre Game](assets/readme-files/pre-game.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+</details> 
 
-------
 
-## Release History
+[Back to top ⇧](#My-foody-book)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Design
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+[Back to top ⇧](#My-foody-book)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Skeleton
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<details>
+<summary>Home Page</summary>
+    
+![Homepage](assets/readme-files/Home - My Foody book no recipe.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+</details> 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<details>
+<summary>All recipe page</summary>
+    
+![Homepage](assets/readme-files/All recipe page.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+</details> 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<details>
+<summary>Landing page</summary>
+    
+![Landing-Page](assets/readme-files/Landing page.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+</details> 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<details>
+<summary>Profile page</summary>
+    
+![Profile](assets/readme-files/Profile page.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+</details> 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<details>
+<summary>Login</summary>
+    
+![Login](assets/readme-files/Login.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+</details> 
+<details>
+<summary>Register page</summary>
+    
+![Register](assets/readme-files/register page.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+</details> 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<details>
+<summary>My Foody Book page</summary>
+    
+![Foody-book](assets/readme-files/My Foody Book page.png)
 
-------
+</details> 
 
-## FAQ about the uptime script
+<details>
+<summary>My Foody Book page no recipe</summary>
+    
+![Foody-book](assets/readme-files/Home - My Foody book no recipe.png)
 
-**Why have you added this script?**
+</details> 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[Back to top ⇧](#My-foody-book)
 
-**How will this affect me?**
+## Features
+### Existing Features
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+[Back to top ⇧](#My-foody-book)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Features to Implement in the future
 
-**So….?**
+[Back to top ⇧](#My-foody-book)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Issues and Bugs 
+Several issues were encountered during developpement but the most troublesome are listed below.
 
-**Can I opt out?**
+**Bankrupt would reset the player overall gains instead of the player round earnings** 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Unfixed Bugs 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[Back to top ⇧](#My-foody-book)
 
-**Anything more?**
+## Technologies Used
+### Main Languages Used
+* Python3
+### Frameworks, Libraries & Programs Used
+- [Heroku](https://heroku.com/ "Link to Heroku") was used to deploy the game.
+- [GitPod](https://gitpod.io/ "Link to GitPod homepage") was used for writing, commiting, and pushing code.
+- [GitHub](https://github.com/ "Link to GitHub")
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage") was used to verify responsiveness and to create the top picture of this README.md
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+[Back to top ⇧](#My-foody-book)
 
----
+## Testing
+Refer to this [page](TESTING.md) please
 
-Happy coding!
+## Deployment
+The site was developped on Gitpod and Codeanywhere, commiting and pushing to github.
+
+### Deploying on Heroku
+Deploying on Heroky required the following:
+
+* Type "pip freeze > requirements.txt" in your Github terminal to update the requirements.txt file with the list of dependencies used in the project . Save, commit and push.
+
+* Create an Heroku account, select Python as the 'Primary development language'.
+
+* Open the email sent to your address and click the link to verify your email address. Follow the instructions to create a password and log in.
+
+* Click the 'create new app' button on the dashboard. Name your app, select your region and click 'Create App'
+
+* In the "Settings" tab, add both the python and node.js build packs.
+
+* Create a "Config VAR" named 'CREDS' KEY and copy/paste the creds.json file in it.
+
+* Create another "Config VAR" called PORT as the KEY with 8000 as VALUE.
+
+* In the "Deploy" tab, choose GitHub as a deployment method.
+
+* Search for the wanted repository.
+
+* Click on "enable automatic deploys" and then deploy branch.
+
+* once the app built (a minute or two needed)click "View" to access the site.
+   
+[Back to top ⇧](#My-foody-book)
+
+## Credits 
+### Code 
+The developer has consulted countless times Stack Overflow and W3Schools in ordeer to build the game.
+The code inspired by other developpers is commented directly in the code.
+
+[Back to top ⇧](#My-foody-book)
+
+## Acknowledgements
+I would like to thank:
+* My wife  for her patience and her kind words when I was in doubt.
+* my mentor, Seun, for her counseling and her contagious enthusiasm and love for coding.
+* my fellow coding students of Code institue who have been invaluable on Slack.
+
+[Back to top ⇧](#My-foody-book)
+
+***

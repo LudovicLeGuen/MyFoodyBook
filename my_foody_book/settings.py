@@ -27,10 +27,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['my-foody-book.herokuapp.com', 'localhost']
-
+ALLOWED_HOSTS = [
+    '8000-ludovicleguen-myfoodyboo-bb34dg2u7j.us2.codeanyapp.com',
+    'localhost',
+    os.environ.get('my-foody-book.herokuapp.com')
+]
 
 # Application definition
 
