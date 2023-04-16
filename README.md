@@ -73,55 +73,55 @@
 <details>
 <summary>Home Page</summary>
     
-![Homepage](assets/readme-files/Home - My Foody book no recipe.png)
+![Homepage](assets/readme-files/home-my-foody-book.png)
 
 </details> 
 
 <details>
 <summary>All recipe page</summary>
     
-![Homepage](assets/readme-files/All recipe page.png)
+![Homepage](assets/readme-files/all-recipe.png)
 
 </details> 
 
 <details>
 <summary>Landing page</summary>
     
-![Landing-Page](assets/readme-files/Landing page.png)
+![Landing-Page](assets/readme-files/landing-page.png)
 
 </details> 
 
 <details>
 <summary>Profile page</summary>
     
-![Profile](assets/readme-files/Profile page.png)
+![Profile](assets/readme-files/profile-page.png)
 
 </details> 
 
 <details>
 <summary>Login</summary>
     
-![Login](assets/readme-files/Login.png)
+![Login](assets/readme-files/login.png)
 
 </details> 
 <details>
 <summary>Register page</summary>
     
-![Register](assets/readme-files/register page.png)
+![Register](assets/readme-files/register-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page</summary>
     
-![Foody-book](assets/readme-files/My Foody Book page.png)
+![Foody-book](assets/readme-files/my-foody-book-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page no recipe</summary>
     
-![Foody-book](assets/readme-files/Home - My Foody book no recipe.png)
+![Foody-book](assets/readme-files/Home-My-Foody-book-no-recipe.png)
 
 </details> 
 
