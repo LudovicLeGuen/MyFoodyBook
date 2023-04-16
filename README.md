@@ -73,21 +73,21 @@
 <details>
 <summary>Home Page</summary>
     
-![Homepage](assets/readme-files/Home - My Foody book no recipe.png)
+![Homepage](assets/readme-files/home-my-foody-book.png)
 
 </details> 
 
 <details>
 <summary>All recipe page</summary>
     
-![Homepage](assets/readme-files/All recipe page.png)
+![Homepage](assets/readme-files/all-recipe.png)
 
 </details> 
 
 <details>
 <summary>Landing page</summary>
     
-![Landing-Page](assets/readme-files/Landing page.png)
+![Landing-Page](assets/readme-files/landing-page.png)
 
 </details> 
 
@@ -121,7 +121,7 @@
 <details>
 <summary>My Foody Book page no recipe</summary>
     
-![Foody-book](assets/readme-files/Home - My Foody book no recipe.png)
+![Foody-book](assets/readme-files/Home-My-Foody-book-no-recipe.png)
 
 </details> 
 
