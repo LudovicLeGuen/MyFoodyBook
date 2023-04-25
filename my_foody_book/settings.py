@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
     'publish',
 ]
 
@@ -63,6 +64,9 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
