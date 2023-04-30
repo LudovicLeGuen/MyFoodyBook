@@ -26,8 +26,7 @@ class RegisterView(View):
             username = form.cleaned_data.get('username')
             messages.success(
                 request,
-                f'Welcome to My Foody Book {username}!
-                Your account is created.'
+                f'Welcome to My Foody Book {username}! Your account is created'
                 )
 
             return redirect(to='/')
