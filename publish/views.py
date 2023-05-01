@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
+from django.template.defaultfilters import slugify
 
 
 class RecipeList(generic.ListView):
@@ -36,7 +37,9 @@ class RecipeDetail(View):
 
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
-        comments = recipe.comments.filter(approved=True).order_by("-created_on")
+        comments = recipe.comments.filter(approved=True).order_by(
+            "-created_on"
+            )
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -62,3 +65,54 @@ class RecipeDetail(View):
                 "liked": liked
             },
         )
+
+
+class PublishRecipe(View):
+    """
+    Used to post a recipe.
+    Combined with the RecipeForm and the publish_recipe template.
+
+    """
+
+    form_class = RecipeForm
+    initial = {'key': 'value'}
+    template_name = 'publish_recipe.html'
+
+    def get(self, request, *args, **kwargs):
+
+        form = self.form_class(initial=self.initial)
+        return render(
+            request,
+            self.template_name,
+            {
+                'form': form,
+                'posted': False,
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        form = self.form_class(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.instance.author = request.user
+            form.instance.slug = slugify(form.instance.title)
+            recipe = form.save(commit=False)
+            recipe.save()
+            return render(
+                request,
+                'publish_recipe.html',
+                {
+                    'posted': True,
+                }
+            )
+        else:
+            return render(
+                request,
+                'publish_recipe.html',
+                {
+                    'form': form,
+                    'failed': True,
+                    'posted': False,
+                }
+            )

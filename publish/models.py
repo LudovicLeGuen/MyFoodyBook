@@ -20,7 +20,7 @@ class Recipe(models.Model):
         )
     recipe_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField()
-    prep_time = models.PositiveIntegerField()
+    preping_time = models.PositiveIntegerField()
     cook_time = models.PositiveIntegerField()
     serves = models.PositiveIntegerField()
     ingredients = models.TextField()
