@@ -11,6 +11,8 @@ urlpatterns = [
         ),
     path('recipe/update/<int:pk>/', views.EditRecipe.as_view(),
          name='update_recipe'),
+    path('my_foody_book/', views.MyFoodyBook.as_view(),
+         name='my_foody_book'),
     path(
         'publish/<slug:slug>/',
         views.RecipeDetail.as_view(),

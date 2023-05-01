@@ -68,6 +68,29 @@ class RecipeDetail(View):
         )
 
 
+class MyFoodyBook(generic.ListView):
+    """
+    Returns recipe objects created and collected by the logged in user.
+    """
+
+    model = Recipe
+    template_name = 'my_foody_book.html'
+
+    def get(self, request):
+
+        queryset = Recipe.objects.filter(
+            author=request.user.id).order_by('-created_on')
+        queryset_dict = {
+            'my_foody_book': queryset
+        }
+
+        return render(
+            request,
+            self.template_name,
+            queryset_dict
+        )
+
+
 class PublishRecipe(View):
     """
     Used to post a recipe by a logged in user.
