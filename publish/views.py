@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
+from django.views.generic import TemplateView
 from django.template.defaultfilters import slugify
 
 
@@ -69,7 +70,7 @@ class RecipeDetail(View):
 
 class PublishRecipe(View):
     """
-    Used to post a recipe.
+    Used to post a recipe by a logged in user.
     Combined with the RecipeForm and the publish_recipe template.
 
     """
@@ -110,6 +111,63 @@ class PublishRecipe(View):
             return render(
                 request,
                 'publish_recipe.html',
+                {
+                    'form': form,
+                    'failed': True,
+                    'posted': False,
+                }
+            )
+
+
+class EditRecipe(TemplateView):
+    """
+    Used to edit a recipe by the user.
+    Combined with the form and the update_recipe template.
+    """
+
+    model = Recipe
+    template_name = 'update_recipe.html'
+
+    def get(self, request, pk, *args, **kwargs):
+        """
+        Get method to render template and form.
+        """
+
+        recipe = Recipe.objects.get(pk=pk)
+        form = RecipeForm(instance=recipe)
+
+        return render(
+            request,
+            self.template_name,
+            {
+                'form': form,
+                'posted': False
+            }
+        )
+
+    def post(self, request, pk, *args, **kwargs):
+
+        recipe = Recipe.objects.get(pk=pk)
+        form = RecipeForm(request.POST, request.FILES, instance=recipe)
+
+        if form.is_valid():
+            form.save()
+            form.instance.slug = slugify(form.instance.title)
+            recipe = form.save(commit=False)
+            recipe.save()
+
+            return render(
+                request,
+                self.template_name,
+                {
+                    'form': form,
+                    'posted': True
+                }
+            )
+        else:
+            return render(
+                request,
+                self.template_name,
                 {
                     'form': form,
                     'failed': True,
