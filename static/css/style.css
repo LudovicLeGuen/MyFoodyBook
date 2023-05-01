@@ -140,3 +140,16 @@ body {
     background: transparent;
     border: none;
 }
+
+.nav-avatar{
+    max-height: 50px;
+}
+
+.navbar {
+    height: 75px;
+}
+
+.card-img {
+    max-height: 100px;
+    max-width: 100px;
+}
