@@ -1,9 +1,11 @@
-# copied from Hana Belay https://dev.to/earthcomfy/creating-a-django-registration-login-app-part-ii-3k6
-from django.shortcuts import render, redirect 
+# copied from Hana Belay
+# https://dev.to/earthcomfy/creating-a-django-registration-login-app-part-ii-3k6
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import View
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
+from .forms import UpdateUserForm, UpdateProfileForm
 
 
 class RegisterView(View):
@@ -22,12 +24,37 @@ class RegisterView(View):
             form.save()
 
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Welcome to the Foody Book {username}! Your account is created.')
+            messages.success(
+                request,
+                f'Congratulations {username}! Your account is created.'
+                )
 
             return redirect(to='/')
 
         return render(request, self.template_name, {'form': form})
 
+
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    if request.method == 'POST':
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = UpdateProfileForm(
+            request.POST,
+            request.FILES,
+            instance=request.user.profile
+            )
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile is updated successfully')
+            return redirect(to='users-profile')
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user.profile)
+
+    return render(
+        request,
+        'users/profile.html',
+        {'user_form': user_form, 'profile_form': profile_form}
+        )
