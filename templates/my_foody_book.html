@@ -132,7 +132,7 @@
 
                                 <!-- Delete Link -->
                                 <a class="inline-block delete-button w-5/12 text-center text-xl bg-red-500 px-2 py-1.5 border border-black hover:scale-105 hover:shadow"
-                                    href=#>Delete</a>
+                                    href="{% url 'remove_recipe' recipe.id %}",>Delete</a>
 
                                 <!-- Cancel Button -->
                                 <button

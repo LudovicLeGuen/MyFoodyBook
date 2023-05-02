@@ -1,9 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from .models import Recipe
 from .forms import CommentForm, RecipeForm
 from django.views.generic import TemplateView
 from django.template.defaultfilters import slugify
+from django.contrib import messages
 
 
 class RecipeList(generic.ListView):
@@ -197,3 +198,14 @@ class EditRecipe(TemplateView):
                     'posted': False,
                 }
             )
+
+
+class RemoveRecipe(View):
+
+    def get(self, request, pk, *args, **kwargs):
+
+        recipe = get_object_or_404(Recipe, pk=pk)
+        recipe.delete()
+        messages.success(request, 'Your recipe is gone')
+
+        return redirect(reverse('my_foody_book'))
