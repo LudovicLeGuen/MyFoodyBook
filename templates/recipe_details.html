@@ -51,22 +51,22 @@
                 {% if user.is_authenticated %}
 
                 <!-- Like Submission Form -->
-                <form class="absolute top-[5px] right-[5px]" action="{% url 'recipe_like' recipe.slug %}" method="post">
+                <form class="absolute top-[5px] right-[5px]" action="{% url 'recipe_collect' recipe.slug %}" method="post">
                     {% csrf_token %}
 
                     <!-- If Recipe Is Already Liked -->
                     {% if liked %}
 
                     <!-- Unlike Button and Icon -->
-                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Unlike recipe button">
-                        <i class="fa-solid fa-heart-circle-minus fa-2x w-full h-full"></i>
+                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Discard recipe button">
+                        <i class="fa-solid fa-bookmark fa-2x w-full h-full"></i>
                     </button>
 
                     {% else %}
 
                     <!-- Like Button and Icon -->
-                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Like recipe button">
-                        <i class="fa-solid fa-heart-circle-plus fa-2x w-full h-full"></i>
+                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Collect recipe button">
+                        <i class="fa-thin fa-bookmark fa-2x w-full h-full"></i>
                     </button>
 
                     {% endif %}
@@ -90,8 +90,7 @@
                 <h2 class="text-left text-4xl block md:inline-block md:mr-3 md:mb-3">{{ recipe.title }}</h2>
 
                 <!-- Number of Likes -->
-                <h3 class="block md:inline-block text-xl mb-3 text-right md:text-left">Likes - {{ recipe.number_of_likes
-                    }} <i class="fa-solid fa-heart"></i></h3>
+                <h3 class="block md:inline-block text-xl mb-3 text-right md:text-left">Collected {{ recipe.number_of_likes }} times<i class="fa-solid fa-heart"></i></h3>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-10 mb-6">
 
@@ -112,7 +111,8 @@
 
                     <!-- Preping Time -->
                     <p class="text-base md:text-xl"><i
-                            class="fa-solid fa-kitchen-set text-2xl md:text-3xl align-sub mr-5"></i> Preping time - {{ recipe.preping_time }} mins</p>
+                            class="fa-solid fa-kitchen-set text-2xl md:text-3xl align-sub mr-5"></i> Preping time - {{
+                        recipe.preping_time }} mins</p>
 
                     <!-- Cooking Time -->
                     <p class="text-base md:text-xl"><i
