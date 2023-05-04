@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-ludovicleguen-myfoodyboo-jv8p2j5ka1.us2.codeanyapp.com',
+    '8000-ludovicleguen-myfoodyboo-82enu74fec.us2.codeanyapp.com',
     'localhost',
     os.environ.get('my-foody-book.herokuapp.com')
 ]

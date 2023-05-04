@@ -6,6 +6,8 @@ from django.views import View
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
+from django.views.generic.list import ListView
+from .models import Profile
 
 
 class RegisterView(View):
@@ -58,3 +60,10 @@ def profile(request):
         'users/profile.html',
         {'user_form': user_form, 'profile_form': profile_form}
         )
+
+
+
+class UserListView(ListView):
+
+    model = Profile
+    template_name = 'users/userslist.html'
