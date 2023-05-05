@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import View
 from .forms import RegisterForm
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
 from django.views.generic.list import ListView
