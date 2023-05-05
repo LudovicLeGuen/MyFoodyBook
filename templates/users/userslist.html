@@ -19,7 +19,7 @@
         <div class="row">
 
             <!-- Recipe Loop -->
-            {% for user in object_list %}
+            {% for userData in data %}
             <div class="col-md-4">
 
                 <!-- Profile Card -->
@@ -35,7 +35,7 @@
 
                         {% else %}
                         <!-- Featured Image -->
-                        <img class="card-img-top" src="{{ profile.avatar.url }}" alt="User picture">
+                        <img class="card-img-top" src="{{ userData.avatar.url }}" alt="User picture">
 
                         {% endif %}
 
@@ -45,7 +45,7 @@
                     <div class="recipe-text-content p-5 bg-lime-100 border border-black">
 
                         <!-- Title -->
-                        <h3 class="text-left text-3xl mb-3">{{ profile.user }}</h3>
+                        <h3 class="text-left text-3xl mb-3">{{ userData.user }}</h3>
 
                     </div>
                 </div>

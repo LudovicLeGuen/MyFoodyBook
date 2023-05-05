@@ -63,8 +63,6 @@ def profile(request):
         )
 
 
-
-class UserListView(ListView):
-
-    model = Profile
-    template_name = 'users/userslist.html'
+def show_all_users(request):
+    data = Profile.objects.all()
+    return render(request, 'users/userslist.html', {'data': data})

@@ -216,7 +216,7 @@ class RemoveRecipe(View):
 
 
 class RecipeCollect(View):
-   
+
     def post(self, request, slug):
         """
         Post method for liking and unliking a recipe.
