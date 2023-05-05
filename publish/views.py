@@ -78,10 +78,13 @@ class MyFoodyBook(generic.ListView):
     model = Recipe
     template_name = 'my_foody_book.html'
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
 
+        user = request.user
         queryset = Recipe.objects.filter(
-            author=request.user.id).order_by('-created_on')
+            author=request.user.id).order_by(
+                '-created_on') | Recipe.objects.filter(likes=user).filter(
+                        status=1).order_by('-created_on')
         queryset_dict = {
             'my_foody_book': queryset
         }
