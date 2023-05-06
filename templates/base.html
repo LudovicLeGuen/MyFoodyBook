@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">My Foody Book</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,13 +37,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">All Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users-profile' %}">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_foody_book' %}">My Foody Book</a>
+                        <a class="nav-link" href="{% url 'users-list' %}">Users</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -58,11 +55,14 @@
                     </li>
                     {% endif %}
                 </ul>
+                <div class="top-title"><a class="navbar-brand" href="{% url 'my_foody_book' %}">My Foody Book</a></div>
 
-                <a href="{% url 'publish_recipe' %}" class="hidden lg:block text-xl uppercase bg-green-600 px-3 py-2 mx-4 border border-black hover:scale-105 hover:shadow">Create A Recipe</a>
+                <a href="{% url 'publish_recipe' %}"
+                    class="hidden lg:block text-xl uppercase bg-green-600 px-3 py-2 mx-4 border border-black hover:scale-105 hover:shadow">Create
+                    a Recipe</a>
 
             </div>
-            <img class="rounded-circle nav-avatar" src="{{ request.user.profile.avatar.url }}" id="img">
+            <a href="{% url 'users-profile' %}"><img class="rounded-circle nav-avatar" src="{{ request.user.profile.avatar.url }}" id="img"></a>
         </div>
     </nav>
     <!--Any flash messages pop up in any page because this is the base template-->
@@ -85,13 +85,12 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
-            <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i>
         </p>
     </footer>
-    
 
     <!-- A plugin for password show/hide  -->
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
