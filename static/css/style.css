@@ -22,12 +22,15 @@ body {
     position: relative;
 }
 
-.image-flash {
+.recipe-avatar {
     position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: 0px;
-    background-color: #23BBBB;
+    left: 5;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+   
 }
 
 .author {
@@ -135,8 +138,8 @@ body {
 }
 
 .card-img {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 img {

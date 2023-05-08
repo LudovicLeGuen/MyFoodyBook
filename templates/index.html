@@ -19,15 +19,14 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.recipe_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <div>
-                                        <img class="rounded-circle card-img" src="{{ recipe.author.profile.avatar.url }}">
-                                    </div>
-                                    <p class="author">By {{ recipe.author }}</p>
+                                <div class="recipe-avatar">
+                                    <a href="{% url 'users-profile' %}"><img class="rounded-circle card-img mx-auto d-block border border-5"
+                                        src="{{ recipe.author.profile.avatar.url }}"></a>
                                 </div>
                             </div>
                             <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
                                 <h2 class="card-title">{{ recipe.title }}</h2>
+                                <p class="author">By {{ recipe.author }}</p>
                                 <p class="card-text">{{ recipe.excerpt }}</p>
                             </a>
                             <hr />
