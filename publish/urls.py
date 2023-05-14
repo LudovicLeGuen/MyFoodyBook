@@ -9,7 +9,8 @@ urlpatterns = [
         views.PublishRecipe.as_view(),
         name='publish_recipe'
         ),
-    path('collect/<slug:slug>', views.RecipeCollect.as_view(), name='recipe_collect'),
+    path('collect/<slug:slug>', views.RecipeCollect.as_view(),
+         name='recipe_collect'),
     path('recipe/update/<int:pk>/', views.EditRecipe.as_view(),
          name='update_recipe'),
     path('my_foody_book/', views.MyFoodyBook.as_view(),
