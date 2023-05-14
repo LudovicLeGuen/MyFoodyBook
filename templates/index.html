@@ -14,14 +14,14 @@
                         <div class="card-body">
                             <a href="{% url 'recipe_details' recipe.slug %}">
                                 <div class="image-container">
-                                    {% if "placeholder" in recipe.featured_image.url %}
+                                    {% if "placeholder" in recipe.recipe_image.url %}
                                     <img class="card-img-top rounded"
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                        src="https://m.media-amazon.com/images/I/41ZBeQBcK3L._UF1000,1000_QL80_.jpg">
                                     {% else %}
                                     <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
                                     {% endif %}
                                     <div class="recipe-avatar">
-                                        {% if "placeholder" in recipe.author.profile.avatar.url %}
+                                        {% if "placeholder" in recipe.avatar.url %}
                                         <a href="{% url 'users-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>

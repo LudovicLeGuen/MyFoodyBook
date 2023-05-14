@@ -50,20 +50,20 @@
                         <div class="relative">
 
                             <!-- Placeholder -->
-                            {% if "placeholder" in recipe.featured_image.url %}
-                            <img class="object-center object-cover w-full h-[250px] md:h-[300px]" src=" "
-                                alt="Make salsa not war in pink lights on colourful wall">
+                            {% if "placeholder" in recipe.recipe_image.url %}
+                            <img class="card-img-top" src="https://img.freepik.com/premium-photo/chef-cooking-with-fresh-vegetable-healthy-food-kitchen-created-with-generative-ai-technology_67092-4498.jpg?w=2000"
+                                alt="vegetable art on a page">
 
                             <!-- Number of Likes Icon Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left">Likes - {{
-                                recipe.number_of_likes }} <i class="fa-solid fa-heart"></i></div>
+                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left"> Collected by  
+                                {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i></div>
 
                             <!-- Publish Status Tag -->
                             <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 left-3 text-lg text-left">
                                 {% if recipe.status == 0 %}
-                                Draft <i class="fa-regular fa-pen-to-square"></i>
+                                Secret <i class="fa-regular fa-pen-to-square"></i>
                                 {% else %}
-                                Published <i class="fa-solid fa-check"></i>
+                                Shared <i class="fa-solid fa-check"></i>
                                 {% endif %}
                             </div>
 
@@ -72,15 +72,15 @@
                             <img class="card-img-top" src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
 
                             <!-- Number of Likes Icon Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left">Likes - {{
-                                recipe.number_of_likes }} <i class="fa-solid fa-heart"></i></div>
+                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left">Collected by 
+                                {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i></div>
 
                             <!-- Publish Status Tag -->
                             <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 left-3 text-lg text-left">
                                 {% if recipe.status == 0 %}
-                                Draft <i class="fa-regular fa-pen-to-square"></i>
+                                Secret <i class="fa-regular fa-pen-to-square"></i>
                                 {% else %}
-                                Published <i class="fa-solid fa-check"></i>
+                                Shared <i class="fa-solid fa-check"></i>
                                 {% endif %}
                             </div>
 
