@@ -6,8 +6,8 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+        <div class="mx-auto px-5">
+            <div class="row mx-5 mt-5">
                 {% for recipe in recipe_list %}
                 <div class="col-md-4">
                     <div class="card shadow mb-4 rounded">
@@ -34,7 +34,7 @@
                             </a>
                         </div>
                         <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
-                            <h2 class="card-title">{{ recipe.title }}</h2>
+                            <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
                             <p class="author">By {{ recipe.author }}</p>
                             <hr />
                             <div class="card-cooking-time">
@@ -53,7 +53,7 @@
             </div>
             {% if forloop.counter|divisibleby:3 %}
         </div>
-        <div class="row">
+        <div div class="row mx-5 mb-3">
             {% endif %}
             {% endfor %}
 

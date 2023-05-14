@@ -38,6 +38,15 @@ body {
     justify-content: space-between;
 }
 
+.title-line-clamp{
+    height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
 .line-clamp{
     height: 70px;
     display: -webkit-box;
@@ -47,7 +56,6 @@ body {
 }
 
 .author {
-    color: white;
     margin: 4px;
     text-transform: uppercase;
 }
