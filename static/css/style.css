@@ -1,5 +1,5 @@
 body {
-    background-color: #DE8F6E !important;
+    background-color: #ffffff !important;
 }
 
 .top-title{
@@ -15,7 +15,7 @@ body {
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: #fcfcfd;
 }
 
 .image-container {
@@ -174,4 +174,11 @@ img {
 
 i::before{
     background:transparent;
+ }
+
+/* Profile */
+
+#profile-container{
+    display: flex;
+    justify-content: center;
  }
