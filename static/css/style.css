@@ -190,3 +190,20 @@ i::before{
     display: flex;
     justify-content: center;
  }
+
+ /* Recipe Details */
+
+.recipe-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.recipe-like{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.recipe-img{
+    position: relative;
+}
