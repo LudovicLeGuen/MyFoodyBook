@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Recipes entry Column -->
         <div class="mx-auto px-5">
             <div class="row mx-5 mt-5">
                 {% for recipe in recipe_list %}
@@ -16,7 +16,8 @@
                                 <div class="image-container">
                                     {% if "placeholder" in recipe.recipe_image.url %}
                                     <img class="card-img-top rounded"
-                                        src="https://m.media-amazon.com/images/I/41ZBeQBcK3L._UF1000,1000_QL80_.jpg">
+                                        src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                                        alt="Exploding carrot">
                                     {% else %}
                                     <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
                                     {% endif %}

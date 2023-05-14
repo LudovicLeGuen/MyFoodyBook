@@ -59,7 +59,7 @@
                     <h2 class="text-center text-4xl mb-10">Are you sure you want to cancel?</h2>
                     <p class="text-lg text-center">Your form progress will be lost and you will be returned to your recipes page!</p>
                     <p class="text-lg text-center mb-6">This cannot be undone!</p>
-                    <a class="confirm block text-center" href="{% url 'my_recipes' %}">Yes take me to my recipes!</a>
+                    <a class="confirm block text-center" href="{% url 'my_foody_book' %}">Yes take me to my recipes!</a>
                     <button class="cancel block mt-3 text-center">No take me back!</button>
                 </div>
 
@@ -69,7 +69,7 @@
             <div class="not-user-recipe-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
                 <h2 class="text-center text-4xl mb-10">You can't edit a recipe that isn't yours!</h2>
                 <p class="text-lg text-center mb-3">View your recipe list on the My Recipes page!</p>
-                <a class="block confirm text-center confirm mb-3" href="{% url 'my_recipes' %}">My Recipes</a>
+                <a class="block confirm text-center confirm mb-3" href="{% url 'my_foody_book' %}">My Recipes</a>
                 <p class="text-lg text-center mb-3">Otherwise you can return to the homepage to view other recipes.</p>
                 <a href="{% url 'home' %}" class="cancel block text-center">No take me back home!</a>
             </div>
@@ -98,7 +98,7 @@
                 <h2 class="text-center text-4xl mb-10">Thank you for editing your recipe!</h2>
                 <p class="text-lg text-center mb-3">Your recipe has been successfully submitted</p>
                 <p class="text-lg text-center mb-3">Would you like to return to the home page or to your recipes?</p>
-                <a class="confirm block text-center mb-3" href="{% url 'my_recipes' %}">Take me to my recipes!</a>
+                <a class="confirm block text-center mb-3" href="{% url 'my_foody_book' %}">Take me to my recipes!</a>
                 <a href="{% url 'home' %}" class="cancel block text-center">Take me back home!</a>
             </div>
 
