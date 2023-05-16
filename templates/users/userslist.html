@@ -2,56 +2,58 @@
 
 {% block content %}
 
-<!-- My Recipes Section -->
-<section class="my-recipes-section bg-white py-14 md:py-20 flex-1 flex flex-col items-center px-5">
+<section class="container-fluid">
 
     <!-- Container -->
-    <div class="container mx-auto">
+    <div class="row">
 
         <!-- Heading -->
         <h1 class="text-center text-4xl mb-10">All Foody Bookers</h1>
 
-    </div>
+        <!-- Cards Container -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
 
+                <!-- Recipe Loop -->
+                {% for userData in data %}
+                <div class="col-md-2">
 
-    <!-- Cards Container -->
-    <div class="col-12 mt-3 left">
-        <div class="row">
+                    <!-- Profile Card -->
+                    <div class="card shadow mb-4 rounded">
 
-            <!-- Recipe Loop -->
-            {% for userData in data %}
-            <div class="col-md-4">
+                        <!-- Images -->
+                        <div class="relative">
 
-                <!-- Profile Card -->
-                <div class="card mb-4">
+                            <!-- Placeholder -->
+                            {% if "placeholder" in userData.avatar.url %}
+                            <a href="{% url 'users-profile' %}"><img
+                                    class="card-img mx-auto d-block border border-5"
+                                    src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
 
-                    <!-- Images -->
-                    <div class="relative">
+                            {% else %}
 
-                        <!-- Placeholder -->
-                        {% if "placeholder" in profile.avatar.url %}
-                        <img class="object-center object-cover w-full h-[250px] md:h-[300px]" src=" "
-                            alt="Make salsa not war in pink lights on colourful wall">
+                            <!-- Featured Image -->
+                            <a href="{% url 'users-profile' %}"><img
+                                class="card-img mx-auto d-block border border-5"
+                                src="{{ userData.avatar.url }}" alt="User picture"></a>
 
-                        {% else %}
-                        <!-- Featured Image -->
-                        <img class="card-img-top" src="{{ userData.avatar.url }}" alt="User picture">
+                            {% endif %}
 
-                        {% endif %}
+                        </div>
 
-                    </div>
+                        <!-- Text Content -->
+                        <div>
 
-                    <!-- Text Content -->
-                    <div class="recipe-text-content p-5 bg-lime-100 border border-black">
+                            <!-- User Name -->
+                            <h3 class="text-center">{{ userData.user }}</h3>
 
-                        <!-- Title -->
-                        <h3 class="text-left text-3xl mb-3">{{ userData.user }}</h3>
-
+                        </div>
                     </div>
                 </div>
-            {% endfor %}
-
+                {% endfor %}
             </div>
+        </div>
+    </div>
 </section>
 
 {% endblock %}
