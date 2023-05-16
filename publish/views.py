@@ -77,6 +77,7 @@ class MyFoodyBook(generic.ListView):
 
     model = Recipe
     template_name = 'my_foody_book.html'
+    paginate_by = 6
 
     def get(self, request, *args, **kwargs):
 

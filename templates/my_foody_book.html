@@ -3,10 +3,10 @@
 {% block content %}
 
 <!-- My Foody Book section Section -->
-<section class="my-recipes-section bg-white py-14 md:py-20 flex-1 flex flex-col items-center px-5">
+<section class="container-fluid">
 
     <!-- Container -->
-    <div class="container mx-auto">
+    <div class="row">
 
         <!-- If User is Logged In -->
         {% if user.is_authenticated %}
@@ -36,117 +36,138 @@
         {% endif %}
 
         <!-- Cards Container -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+        <div class="mx-auto px-5">
+            <div class="row mx-5 mt-5">
 
                 <!-- Recipe Loop -->
                 {% for recipe in my_foody_book %}
                 <div class="col-md-4">
 
-                    <!-- Recipe Card -->
-                    <div class="card mb-4">
+                    <!-- Card position-->
+                    <div class="card shadow mb-4 rounded">
+                        <div class="card-body">
 
-                        <!-- Images -->
-                        <div class="relative">
+                            <!-- Recipe URL linked to the Image-->
+                            <a href="{% url 'recipe_details' recipe.slug %}">
 
-                            <!-- Placeholder -->
-                            {% if "placeholder" in recipe.recipe_image.url %}
-                            <img class="card-img-top"
-                                src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
-                                alt="Exploding carrot">
+                                <!-- Recipe Image-->
+                                <div class="image-container">
 
-                            <!-- Number of Likes Icon Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left"> Collected
-                                by
-                                {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i></div>
+                                    <!-- If no picture added by user-->
+                                    {% if "placeholder" in recipe.recipe_image.url %}
+                                    <img class="card-img-top rounded"
+                                        src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                                        alt="Exploding carrot">
 
-                            <!-- Publish Status Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 left-3 text-lg text-left">
-                                {% if recipe.status == 0 %}
-                                Secret <i class="fa-regular fa-pen-to-square"></i>
-                                {% else %}
-                                Shared <i class="fa-solid fa-check"></i>
-                                {% endif %}
-                            </div>
+                                    {% else %}
 
-                            {% else %}
-                            <!-- Featured Image -->
-                            <img class="card-img-top" src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
+                                    <!-- With picure added by user-->
+                                    <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
 
-                            <!-- Number of Likes Icon Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left">Collected
-                                by
-                                {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i></div>
+                                    {% endif %}
 
-                            <!-- Publish Status Tag -->
-                            <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 left-3 text-lg text-left">
-                                {% if recipe.status == 0 %}
-                                Secret <i class="fa-regular fa-pen-to-square"></i>
-                                {% else %}
-                                Shared <i class="fa-solid fa-check"></i>
-                                {% endif %}
-                            </div>
+                                    <!-- Author avatar-->
+                                    <div class="recipe-avatar">
 
-                            {% endif %}
+                                        <!-- Profile without avatar-->
+                                        {% if "placeholder" in recipe.avatar.url %}
+                                        <a href="{% url 'users-profile' %}"><img
+                                                class="rounded-circle card-img mx-auto d-block border border-5"
+                                                src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
 
+                                        {% else %}
+                                        <!-- Profile with avatar -->
+                                        <a href="{% url 'users-profile' %}"><img
+                                                class="rounded-circle card-img mx-auto d-block border border-5"
+                                                src="{{ recipe.author.profile.avatar.url }}"></a>
+
+                                        {% endif %}
+                                    </div>
+
+                                    <!-- Number of users who collected -->
+                                    <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 right-3 text-lg text-left">
+                                        Collected
+                                        by
+                                        {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i>
+                                    </div>
+
+                                    <!-- Shared or Secret Status box -->
+                                    <div class="px-2 px-1 z-40 bg-amber-100 absolute top-3 left-3 text-lg text-left">
+                                        {% if recipe.status == 0 %}
+                                        Secret <i class="fa-regular fa-pen-to-square"></i>
+
+                                        {% else %}
+                                        Shared <i class="fa-solid fa-check"></i>
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
                         </div>
 
-                        <!-- Text Content -->
-                        <div class="recipe-text-content p-5 bg-lime-100 border border-black">
+                        <!-- URL linked to the text section-->
+                        <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
 
-                            <!-- Title -->
-                            <h3 class="text-left text-3xl mb-3">{{ recipe.title }}</h3>
+                            <!-- Recipe title-->
+                            <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
 
-                            <!-- Excerpt -->
-                            <p class="mb-5">{{ recipe.excerpt }}</p>
+                            <!-- Recipe Author-->
+                            <p class="author">By {{ recipe.author }}</p>
 
-                            <!-- Links Section -->
-                            <div class="flex flex-row flex-wrap justify-between gap-y-3">
+                            <!-- horizontal line-->
+                            <hr />
 
-                                <!-- Edit Recipe Link -->
-                                <a class="inline-block w-5/12 text-center text-xl bg-amber-400 px-2 py-1.5 border border-black hover:scale-105 hover:shadow"
-                                    href="{% url 'update_recipe' recipe.id %}">Edit</a>
-
-                                <!-- Delete Button -->
-                                <button
-                                    class="inline-block delete-button w-5/12 text-center text-xl bg-red-500 px-2 py-1.5 border border-black hover:scale-105 hover:shadow">Delete</button>
-
-                                <!-- If Recipe is Published -->
-                                {% if recipe.status == 1 %}
-
-                                <!-- View Recipe Link -->
-                                <a class="w-full text-center text-xl bg-green-600 px-2 py-1.5 border border-black hover:scale-105 hover:shadow"
-                                    href="{% url 'recipe_details' recipe.slug %}">View recipe</a>
-                                {% endif %}
-
+                            <!-- Recipe prep and cooking time section -->
+                            <div class="card-cooking-time">
+                                <p class="card-text"><i class="fa-solid fa-kitchen-set"></i> Preparation:
+                                    {{ recipe.preping_time }} Min</p>
+                                <p class="card-text"><i class="fa-regular fa-hourglass-half"></i> Cooking:
+                                    {{ recipe.cook_time }} Min</p>
                             </div>
+
+                            <!-- Recipe excerpt with line control -->
+                            <p class="card-text line-clamp">{{ recipe.excerpt }}</p>
+                        </a>
+
+                        <!-- horizontal line-->
+                        <hr />
+
+                        <!-- Creation date and Likes section-->
+                        <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-heart"></i>
+                            {{ recipe.recipe_likes }}</p>
+                    </div>
+
+                    <!-- Delete Recipe Notification -->
+                    <div class="delete-recipe-notification hidden p-5 bg-lime-100 border border-black">
+
+                        <!-- Title -->
+                        <h3 class="text-left text-3xl mb-3">Are you sure?
+                        </h3>
+
+                        <div class="flex flex-row flex-wrap justify-between gap-y-3">
+
+                            <!-- Delete Link -->
+                            <a class="inline-block delete-button w-5/12 text-center text-xl bg-red-500 px-2 py-1.5 border border-black hover:scale-105 hover:shadow"
+                                href="{% url 'remove_recipe' recipe.id %}" ,>Delete</a>
+
+                            <!-- Cancel Button -->
+                            <button
+                                class="inline-block bg-green-600 cancel-delete w-5/12 text-center text-xl px-2 py-1.5 border border-black hover:scale-105 hover:shadow">Cancel</button>
                         </div>
 
-                        <!-- Delete Recipe Notification -->
-                        <div class="delete-recipe-notification hidden p-5 bg-lime-100 border border-black">
-
-                            <!-- Title -->
-                            <h3 class="text-left text-3xl mb-3">Are you sure you want to delete this recipe?</h3>
-
-                            <!-- Paragraph -->
-                            <p class="mb-5">This cannot be undone!</p>
-
-                            <div class="flex flex-row flex-wrap justify-between gap-y-3">
-
-                                <!-- Delete Link -->
-                                <a class="inline-block delete-button w-5/12 text-center text-xl bg-red-500 px-2 py-1.5 border border-black hover:scale-105 hover:shadow"
-                                    href="{% url 'remove_recipe' recipe.id %}" ,>Delete</a>
-
-                                <!-- Cancel Button -->
-                                <button
-                                    class="inline-block bg-green-600 cancel-delete w-5/12 text-center text-xl px-2 py-1.5 border border-black hover:scale-105 hover:shadow">Cancel</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
 
+            <!-- Row creation loop after 3 cards-->
+            {% if forloop.counter|divisibleby:3 %}
+        </div>
+
+        <div div class="row mx-5 mb-3">
+            {% endif %}
+            {% endfor %}
+        </div>
+        
             <!-- If there are no recipes in the list -->
             {% if MyFoodyBook|length == 0 %}
             <div class="mx-auto container">
@@ -154,55 +175,63 @@
                     class="no-recipes-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
 
                     <!-- Title -->
-                    <h2 class="text-center text-4xl mb-10">You don't have any recipes!</h2>
-
-                    <!-- Paragraph -->
-                    <p class="text-lg text-center mb-3">Click the button below to post your first recipe!</p>
+                    <h2 class="text-center text-4xl mb-10">You haven't got any recipe!</h2>
 
                     <!-- Post Recipe Link -->
-                    <a class="block text-center confirm mb-3" href="{% url 'publish_recipe' %}">Post A Recipe</a>
+                    <a class="block text-center confirm mb-3" href="{% url 'publish_recipe' %}">Post my First Recipe</a>
 
                     <!-- Paragraph -->
-                    <p class="text-lg text-center mb-3">Otherwise you can return to the homepage to view other recipes.
-                    </p>
+                    <p class="text-lg text-center mb-3">You can still be inspired by others.</p>
 
                     <!-- Home Link -->
-                    <a href="{% url 'home' %}" class="cancel block text-center">No take me back home!</a>
+                    <a href="{% url 'home' %}" class="cancel block text-center">Lets see what there is.</a>
                 </div>
             </div>
             {% endif %}
 
-            {% else %}
+        {% else %}
 
-            <!-- If User Isn't Signed In -->
-            <div
-                class="no-sign-up-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
+        <!-- If User Isn't Signed In -->
+        <div
+            class="no-sign-up-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
 
-                <!-- Title -->
-                <h2 class="text-center text-4xl mb-10">You have to be logged in view your recipes!</h2>
+            <!-- Title -->
+            <h2 class="text-center text-4xl mb-10">Login to view your recipes!</h2>
 
-                <!-- Paragraph -->
-                <p class="text-lg text-center mb-3">If you have an account please log in!</p>
+            <!-- Log In Link -->
+            <a id="login-button" class="block text-center confirm mb-3" href="{% url 'account_login' %}">Log
+                In</a>
 
-                <!-- Log In Link -->
-                <a id="login-button" class="block text-center confirm mb-3" href="{% url 'account_login' %}">Log In</a>
+            <!-- Paragraph -->
+            <p class="text-lg text-center mb-3">Or register to post your first recipe!
+            </p>
 
-                <!-- Paragraph -->
-                <p class="text-lg text-center mb-3">Or you can sign up for an account today to post your own recipes!
-                </p>
+            <!-- Sign Up Link -->
+            <a class="confirm block text-center mb-3" href="{% url 'account_signup' %}">Register</a>
 
-                <!-- Sign Up Link -->
-                <a class="confirm block text-center mb-3" href="{% url 'account_signup' %}">Well sign me up!</a>
+            <!-- Paragraph -->
+            <p class="text-lg text-center mb-3">Return home to see all recipes.
+            </p>
 
-                <!-- Paragraph -->
-                <p class="text-lg text-center mb-3">Otherwise you can return to the homepage to view other recipes.</p>
-
-                <!-- Home Link -->
-                <a href="{% url 'home' %}" class="cancel block text-center">No take me back home!</a>
-            </div>
-
-            {% endif %}
+            <!-- Home Link -->
+            <a href="{% url 'home' %}" class="cancel block text-center">Home</a>
         </div>
+        {% endif %}
+    </div>
 </section>
 
+<!-- Pagination -->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 {% endblock %}

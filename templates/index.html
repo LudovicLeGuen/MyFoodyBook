@@ -3,55 +3,96 @@
 {% block content %}
 
 <div class="container-fluid">
+    
+    <!-- Container -->
     <div class="row">
 
         <!-- Recipes entry Column -->
         <div class="mx-auto px-5">
             <div class="row mx-5 mt-5">
+
+                <!-- Recipe Loop -->
                 {% for recipe in recipe_list %}
                 <div class="col-md-4">
+
+                    <!-- Card position-->
                     <div class="card shadow mb-4 rounded">
                         <div class="card-body">
+
+                            <!-- Recipe URL linked to the Image-->
                             <a href="{% url 'recipe_details' recipe.slug %}">
+
+                                <!-- Recipe Image-->
                                 <div class="image-container">
+
+                                    <!-- If no picture added by user-->
                                     {% if "placeholder" in recipe.recipe_image.url %}
                                     <img class="card-img-top rounded"
                                         src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
                                         alt="Exploding carrot">
+
                                     {% else %}
+
+                                    <!-- With picure added by user-->
                                     <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
+
                                     {% endif %}
+
+                                    <!-- Author avatar-->
                                     <div class="recipe-avatar">
+
+                                        <!-- Profile without avatar-->
                                         {% if "placeholder" in recipe.avatar.url %}
                                         <a href="{% url 'users-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+
                                         {% else %}
+                                        <!-- Profile with avatar -->
                                         <a href="{% url 'users-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="{{ recipe.author.profile.avatar.url }}"></a>
+
                                         {% endif %}
                                     </div>
                             </a>
                         </div>
+
+                        <!-- URL linked to the text section-->
                         <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
+
+                            <!-- Recipe title-->
                             <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
+
+                            <!-- Recipe Author-->
                             <p class="author">By {{ recipe.author }}</p>
+
+                            <!-- horizontal line-->
                             <hr />
+
+                            <!-- Recipe prep and cooking time section -->
                             <div class="card-cooking-time">
                                 <p class="card-text"><i class="fa-solid fa-kitchen-set"></i> Preparation:
                                     {{ recipe.preping_time }} Min</p>
                                 <p class="card-text"><i class="fa-regular fa-hourglass-half"></i> Cooking:
                                     {{ recipe.cook_time }} Min</p>
                             </div>
+
+                            <!-- Recipe excerpt with line control -->
                             <p class="card-text line-clamp">{{ recipe.excerpt }}</p>
                         </a>
+
+                        <!-- horizontal line-->
                         <hr />
+
+                        <!-- Creation date and Likes sections-->
                         <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-heart"></i>
                             {{ recipe.recipe_likes }}</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Row creation loop after 3 cards-->
             {% if forloop.counter|divisibleby:3 %}
         </div>
         <div div class="row mx-5 mb-3">
@@ -61,6 +102,8 @@
         </div>
     </div>
 </div>
+
+<!-- Pagination -->
 {% if is_paginated %}
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
@@ -74,5 +117,5 @@
     </ul>
 </nav>
 {% endif %}
-</div>
+
 {%endblock%}
