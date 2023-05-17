@@ -27,6 +27,7 @@ body {
     text-decoration: none;
  }
 
+ /* Recipe Card*/
 .card {
     border: none;
     background-color: #fcfcfd;
@@ -47,6 +48,25 @@ body {
     height: 120px;
    
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+    pointer-events: none;
+}
+  
+.recipe-avatar:hover .overlay {
+    opacity: 0.3;
+}
+
 .card-cooking-time{
     display: flex; 
     justify-content: space-between;

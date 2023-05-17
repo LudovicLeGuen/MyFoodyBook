@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container-fluid">
-    
+
     <!-- Container -->
     <div class="row">
 
@@ -46,14 +46,15 @@
                                         <a href="{% url 'users-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
-
+                                        
                                         {% else %}
                                         <!-- Profile with avatar -->
                                         <a href="{% url 'users-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="{{ recipe.author.profile.avatar.url }}"></a>
-
+                                        
                                         {% endif %}
+                                        <div class="overlay rounded-circle border border-5 border-danger"></div>
                                     </div>
                             </a>
                         </div>
