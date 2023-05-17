@@ -35,7 +35,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="{% url 'my_foody_book' %}">My Foody Book</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">All Recipes</a>
                     </li>
@@ -55,10 +59,9 @@
                     </li>
                     {% endif %}
                 </ul>
-                <div class="top-title"><a class="navbar-brand" href="{% url 'my_foody_book' %}">My Foody Book</a></div>
-
+                
                 <a href="{% url 'publish_recipe' %}"
-                    class="hidden lg:block text-xl uppercase bg-green-600 px-3 py-2 mx-4 border border-black hover:scale-105 hover:shadow">Create
+                    class="create-btn btn-lg border mr-1 hover:scale-105 hover:shadow">Create
                     a Recipe</a>
 
             </div>

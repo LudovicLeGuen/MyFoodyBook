@@ -2,16 +2,30 @@ body {
     background-color: #ffffff !important;
 }
 
-.top-title{
-    margin: 0 auto;
-}
-
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
 }
+
+ /* Navigation bar */
+ .nav-avatar{
+    max-height: 50px;
+}
+
+.navbar {
+    height: 75px;
+    background-color: #221c42;
+    color: white;
+}
+
+.create-btn{
+    background-color: #dde7de;
+    color: #221c42;
+    margin-right: 10px;
+    text-decoration: none;
+ }
 
 .card {
     border: none;
@@ -155,15 +169,6 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
-}
-
-.nav-avatar{
-    max-height: 50px;
-}
-
-.navbar {
-    height: 75px;
-    background-color: #2d93ad;
 }
 
 .card-img {
