@@ -26,7 +26,6 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
 
@@ -38,24 +37,24 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="navbar-brand" href="{% url 'my_foody_book' %}">My Foody Book</a>
+                        <a class="navbar-brand text-white" href="{% url 'my_foody_book' %}">My Foody Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">All Recipes</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">All Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users-list' %}">Users</a>
+                        <a class="nav-link text-white" href="{% url 'users-list' %}">Users</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link text-white" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users-register' %}">Register</a>
+                        <a class="nav-link text-white" href="{% url 'users-register' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
