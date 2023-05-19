@@ -35,7 +35,6 @@ body {
 
 .image-container {
     position: relative;
-
 }
 
 .recipe-avatar {
@@ -46,9 +45,25 @@ body {
     bottom: 0;
     width: 120px;
     height: 120px;
-   
 }
 
+.card-status {
+    position: absolute;
+    left: 0;
+    top: 90%;
+    margin: 0 auto;
+    bottom: 0;
+    width: 105px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.btn-card{
+    width: 150px;
+}
+
+/* adds a slight opacity to ava tars*/
 .overlay {
     position: absolute;
     top: 0;
@@ -72,6 +87,7 @@ body {
     justify-content: space-between;
 }
 
+/* adds 3 dots when title is too long*/
 .title-line-clamp{
     height: 40px;
     display: -webkit-box;
@@ -80,7 +96,7 @@ body {
     overflow: hidden;
 }
 
-
+/* adds 3 dots when line is too long*/
 .line-clamp{
     height: 70px;
     display: -webkit-box;
@@ -89,51 +105,18 @@ body {
     overflow: hidden;
 }
 
-.author {
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
+/* zoom effect on hover*/
 .card-body{
     transition: transform .2s;
 }
 
 .card-body:hover {
     transform: scale(1.05);
+}
+
+.author {
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .post-link {
@@ -178,19 +161,6 @@ body {
     text-decoration: underline;
 }
 
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-
 .card-img {
     max-height: 100%;
     max-width: 100%;
@@ -209,12 +179,13 @@ i::before{
     background:transparent;
  }
 
-/* Profile */
+/* Profile*/
 
 #profile-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
- }
+ } 
 
  /* Recipe Details */
 
