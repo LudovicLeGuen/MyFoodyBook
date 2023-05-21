@@ -15,10 +15,9 @@ urlpatterns = [
          name='update_recipe'),
     path('my_foody_book/', views.MyFoodyBook.as_view(),
          name='my_foody_book'),
-    path('recipe/remove/<int:pk>/', views.RemoveRecipe.as_view(),
-         name='remove_recipe'),
-    path(
-        'publish/<slug:slug>/',
+    path('recipe/remove/<int:pk>/', views.DeleteRecipe.as_view(),
+         name='delete_recipe'),
+    path('publish/<slug:slug>/',
         views.RecipeDetail.as_view(),
         name='recipe_details'
         ),

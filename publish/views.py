@@ -2,10 +2,13 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from .models import Recipe
+from django.views.generic.edit import DeleteView
 from .forms import CommentForm, RecipeForm
 from django.views.generic import TemplateView
 from django.template.defaultfilters import slugify
 from django.contrib import messages
+from django.urls import reverse_lazy
+
 
 
 class RecipeList(generic.ListView):
@@ -207,6 +210,9 @@ class EditRecipe(TemplateView):
 
 class RemoveRecipe(View):
 
+    model = Recipe
+    template_name = 'delete_recipe.html'
+
     def get(self, request, pk, *args, **kwargs):
 
         recipe = get_object_or_404(Recipe, pk=pk)
@@ -215,6 +221,11 @@ class RemoveRecipe(View):
 
         return redirect(reverse('my_foody_book'))
 
+class DeleteRecipe(DeleteView):
+   model=Recipe
+   template_name='delete_recipe.html'
+   success_url=reverse_lazy("my_foody_book")
+        
 
 class RecipeCollect(View):
 
