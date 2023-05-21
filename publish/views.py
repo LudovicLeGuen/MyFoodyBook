@@ -220,7 +220,7 @@ class RecipeCollect(View):
 
     def post(self, request, slug):
         """
-        Post method for liking and unliking a recipe.
+        Post method for Collecting and removing a recipe
         """
 
         recipe = get_object_or_404(Recipe, slug=slug)

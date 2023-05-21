@@ -16,9 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-    <!-- font Awesome -->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d16a3d2fb1.js" crossorigin="anonymous"></script>
-
+    <!-- CSS Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -40,7 +40,8 @@
                         <a class="navbar-brand text-white" href="{% url 'my_foody_book' %}">My Foody Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">All Recipes</a>
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">All
+                            Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'users-list' %}">Users</a>
@@ -58,7 +59,7 @@
                     </li>
                     {% endif %}
                 </ul>
-                
+
                 <a href="{% url 'publish_recipe' %}"
                     class="create-btn btn-lg border mr-1 hover:scale-105 hover:shadow">Create
                     a Recipe</a>
@@ -108,8 +109,9 @@
         </p>
     </footer>
 
-    <!-- A plugin for password show/hide  -->
-    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 
 </html>
