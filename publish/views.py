@@ -207,20 +207,8 @@ class EditRecipe(TemplateView):
                 }
             )
 
-
-class RemoveRecipe(View):
-
-    model = Recipe
-    template_name = 'delete_recipe.html'
-
-    def get(self, request, pk, *args, **kwargs):
-
-        recipe = get_object_or_404(Recipe, pk=pk)
-        recipe.delete()
-        messages.success(request, 'Your recipe is gone')
-
-        return redirect(reverse('my_foody_book'))
-
+#Class inspired by www.tutorialspoint.com : 
+#https://www.tutorialspoint.com/adding-a-deleteview-in-django#:~:text=DeleteView%20is%20a%20view%20in,helpful%20in%20real%2Dworld%20projects.
 class DeleteRecipe(DeleteView):
    model=Recipe
    template_name='delete_recipe.html'

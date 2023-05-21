@@ -33,47 +33,60 @@
 
             <!-- Images -->
             <div class="recipe-img my-4 border border-black">
+                <div class="view-recipe-img-container">
+                    <!-- Placeholder -->
+                    {% if "placeholder" in recipe.recipe_image.url %}
+                    <img class="cover"
+                        src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                        alt="Exploding carrot">
+                    {% else %}
 
-                <!-- Placeholder -->
-                {% if "placeholder" in recipe.recipe_image.url %}
-                <img class="object-center object-cover w-full h-[300px] md:h-[400px]"
-                    src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
-                    alt="Exploding carrot">
-                {% else %}
+                    <!-- Featured Image -->
+                    <img class="cover" src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
 
-                <!-- Featured Image -->
-                <img class="object-center object-cover w-full h-[300px] md:h-[400px]"
-                    src="{{ recipe.recipe_image.url }}" alt="{{ recipe.title }}">
-
-                {% endif %}
-
+                    {% endif %}
+                </div>
                 <!-- If User is Signed In -->
                 {% if user.is_authenticated %}
-
-                <!-- Like Submission Form -->
-                <form class="recipe-like " action="{% url 'recipe_collect' recipe.slug %}"
-                    method="post">
-                    {% csrf_token %}
-
-                    <!-- If Recipe Is Already Liked -->
-                    {% if liked %}
-
-                    <!-- Unlike Button and Icon -->
-                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Discard recipe button">
-                        <i class="fa-solid fa-bookmark fa-2x w-full h-full"></i>
-                    </button>
+                <div class="d-flex justify-content-around my-3">
+                    {% if recipe.author == user %}
+                    <a class="btn btn-secondary btn-card my-3" href="{% url 'update_recipe' recipe.id%}"
+                        role="button">Edit</a>
+                    <a class="btn btn-danger btn-card my-3" href="{% url 'delete_recipe' recipe.id%}"
+                        role="button">Delete</a>
 
                     {% else %}
 
-                    <!-- Like Button and Icon -->
-                    <button type="submit" name="recipe_id" value="{{ recipe.slug }}" aria-label="Collect recipe button">
-                        <i class="fa-regular fa-bookmark fa-2x w-full h-full"></i>
-                    </button>
+                    <!-- Like Submission Form -->
+                    <form action="{% url 'recipe_collect' recipe.slug %}" method="post">
+                        {% csrf_token %}
+
+                        <!-- If Recipe Is Already Liked -->
+                        {% if liked %}
+
+                        <!-- Unlike Button and Icon -->
+                        <button type="submit" class="btn btn-danger my-3" name="recipe_id" value="{{ recipe.slug }}"
+                            aria-label="Discard recipe button">
+                            Remove from my Foody Book
+                        </button>
+                        <i id="collected-icon" class="recipe-like fa-solid fa-bookmark fa-3x"></i>
+
+                        {% else %}
+
+                        <!-- Like Button and Icon -->
+                        <button type="submit" class="btn btn-success my-3" name="recipe_id" value="{{ recipe.slug }}"
+                            aria-label="Collect recipe button">
+                            Add to my Foody Book
+                        </button>
+
+                        <i id="collect-icon" class="recipe-like fa-regular fa-bookmark fa-3x"></i>
+
+                        {% endif %}
+
+                    </form>
 
                     {% endif %}
-
-                </form>
-
+                </div>
                 <!-- If User Is Not Signed In -->
                 {% else %}
 

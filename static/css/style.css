@@ -189,16 +189,38 @@ i::before{
  /* Recipe Details */
 
 .recipe-container{
-    display: flex;
-    flex-direction: row;
+    display: inline-grid;
+    grid-auto-columns: 1fr; 
+    grid-auto-flow:column;
+}
+
+.view-recipe-img-container{
+    height: 100%;
+    width: 100%;
 }
 
 .recipe-like{
+
     position: absolute;
     top: 0px;
     right: 5px;
 }
 
+#collect-icon{
+    color: #198754;
+}
+
+#collected-icon{
+    color: 	#DC3545;
+}
+
 .recipe-img{
     position: relative;
+
+}
+
+.cover{
+    object-fit: cover;
+    width: 100%;
+    height: 100%
 }
