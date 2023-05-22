@@ -13,23 +13,23 @@
         <!-- If user is logged in -->
         {% if user.is_authenticated %}
 
-            <!-- If user is the author of the recipe -->
+            <!--Verifies if user is the recipe author -->
             {% if request.user == form.instance.author %}
 
                 <!-- If the form hasn't been submitted -->
                 {% if posted is False %}
 
-                <div class="mx-auto form-content border border-black w-full lg:w-10/12 xl:w-8/12 2xl:w-7/12 bg-amber-100 p-6">
+                <div class="">
 
                     <!-- Heading -->
                     <h1 class="text-center text-4xl mb-10">Edit Recipe</h1>
 
-                    <!-- Username -->
-                    <h3 class="text-lg">Editing as: {{ user.username }}</h3>
+                    <!-- Author -->
+                    <h3 class="">Editing as: {{ user.username }}</h3>
 
-                    <!-- If Form Submit Failed Notification -->
+                    <!-- When form fails -->
                     {% if failed %}
-                        <p class="text-lg text-red-500">
+                        <p class="text-lg">
                             <strong>
                             Unfortunately your edition failed. Make sure to fill all required fields.
                             </strong>
@@ -37,16 +37,15 @@
                     {% endif %}
 
                     <!-- Form -->
-                    <form enctype="multipart/form-data" class="mt-3 edit-recipe" method="post" name="edit-recipe">
+                    <form enctype="multipart/form-data" class="" method="post" name="edit-recipe">
                         {{ form | crispy }}
                         {% csrf_token %}
 
                         <!-- Submit Button -->
-                        <button class="recipe-submit-button mt-3 primaryAction bg-amber-400" type="submit">Submit</button>
+                        <button class="" type="submit">Submit</button>
 
                         <!-- Cancel Button -->
-                        <button type="button" class="cancel bg-white mt-3">Cancel</button>
-                        
+                        <button class="" type="button">Cancel</button>                        
                     </form>
 
                 </div>

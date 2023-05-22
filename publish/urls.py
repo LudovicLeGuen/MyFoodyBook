@@ -1,14 +1,13 @@
 from . import views
 from django.urls import path
 
+# 404
+handler404 = views.page_404
 
 urlpatterns = [
     path('', views.RecipeList.as_view(), name='home'),
-    path(
-        'publish_recipe/',
-        views.PublishRecipe.as_view(),
-        name='publish_recipe'
-        ),
+    path('publish_recipe/', views.PublishRecipe.as_view(),
+         name='publish_recipe'),
     path('collect/<slug:slug>', views.RecipeCollect.as_view(),
          name='recipe_collect'),
     path('recipe/update/<int:pk>/', views.EditRecipe.as_view(),
@@ -17,9 +16,7 @@ urlpatterns = [
          name='my_foody_book'),
     path('recipe/remove/<int:pk>/', views.DeleteRecipe.as_view(),
          name='delete_recipe'),
-    path('publish/<slug:slug>/',
-        views.RecipeDetail.as_view(),
-        name='recipe_details'
-        ),
-
+    path('publish/<slug:slug>/', views.RecipeDetail.as_view(),
+         name='recipe_details'
+         ),
 ]

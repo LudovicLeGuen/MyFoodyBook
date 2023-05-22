@@ -10,7 +10,6 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 
 
-
 class RecipeList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_on')
@@ -207,13 +206,14 @@ class EditRecipe(TemplateView):
                 }
             )
 
-#Class inspired by www.tutorialspoint.com : 
-#https://www.tutorialspoint.com/adding-a-deleteview-in-django#:~:text=DeleteView%20is%20a%20view%20in,helpful%20in%20real%2Dworld%20projects.
+
+# Class inspired by www.tutorialspoint.com :
+# https://www.tutorialspoint.com/adding-a-deleteview-in-django#:~:text=DeleteView%20is%20a%20view%20in,helpful%20in%20real%2Dworld%20projects.
 class DeleteRecipe(DeleteView):
-   model=Recipe
-   template_name='delete_recipe.html'
-   success_url=reverse_lazy("my_foody_book")
-        
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    success_url = reverse_lazy("my_foody_book")
+
 
 class RecipeCollect(View):
 
@@ -230,3 +230,9 @@ class RecipeCollect(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
+
+
+# 404 View taken from
+# # https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317
+def page_404(request, exception):
+    return render(request, "404.html")
