@@ -9,6 +9,23 @@ body {
     color: #4A4A4F;
 }
 
+/* hero image in index.html*/
+.hero-image{
+    background: url(https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=1600) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.jumbotron{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
  /* Navigation bar */
  .nav-avatar{
     max-height: 50px;

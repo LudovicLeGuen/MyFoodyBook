@@ -57,6 +57,11 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>
                     </li>
+                    {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'admin' %}">Login</a>
+                    </li>
+                      {% endif %}
                     {% endif %}
                 </ul>
 
