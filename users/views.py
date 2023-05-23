@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views import View
 from .forms import RegisterForm
+from django.core.paginator import Paginator, EmptyPage
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
@@ -11,6 +12,7 @@ from django.views.generic.list import ListView
 from .models import Profile
 
 
+# Registration view
 class RegisterView(View):
     form_class = RegisterForm
     initial = {'key': 'value'}
@@ -37,6 +39,7 @@ class RegisterView(View):
         return render(request, self.template_name, {'form': form})
 
 
+# Profile view
 @login_required
 def profile(request):
     if request.method == 'POST':
@@ -63,6 +66,16 @@ def profile(request):
         )
 
 
-def show_all_users(request):
+# All users list
+def show_all_users(request, page=1):
     data = Profile.objects.all()
-    return render(request, 'users/userslist.html', {'data': data})
+    paginator = Paginator(data, 8)
+    try:
+        data = paginator.page(page)
+    except EmptyPage:
+        # if we exceed the page limit we return the last page
+        data = paginator.page(paginator.num_pages)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'users/userslist.html', {"data": data})
