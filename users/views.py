@@ -69,7 +69,6 @@ def my_profile(request):
 # Profile view
 @login_required
 def profile(request, user_id):
-    # import pdb; pdb.set_trace()
     if request.user.id == user_id:
 
         user_form = UpdateUserForm(instance=request.user)
@@ -80,9 +79,7 @@ def profile(request, user_id):
         user_form = UpdateUserForm(instance=user)
         profile_form = UpdateProfileForm(instance=user.profile)
 
-    return render(
-        request,
-        'users/profile.html',
+    return render(request,'users/profile.html',
         {'user_form': user_form, 'profile_form': profile_form}
         )
 

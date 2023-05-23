@@ -197,12 +197,6 @@ i::before{
 
 /* Profile*/
 
-#profile-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
- } 
-
  /* Recipe Details */
 
 .recipe-container{

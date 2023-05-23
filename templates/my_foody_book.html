@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+        {% if user.is_authenticated %}
 <div class="container-fluid">
 
     <!-- Container -->
     <div class="row">
         <!-- If User is Logged In -->
-        {% if user.is_authenticated %}
+
 
         <!-- Heading -->
             <h1 class="text-center text-5xl mb-10 my-4">My Foody Book</h1>
@@ -199,34 +199,22 @@
                 </div>
             </div>
             {% endif %}
-
-        {% else %}
-        <!-- If User Isn't Signed In -->
-        <div
-            class="no-sign-up-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
-
-            <!-- Title -->
-            <h2 class="text-center text-4xl mb-10">Login to view your recipes!</h2>
-
-            <!-- Log In Link -->
-            <a id="login-button" class="block text-center confirm mb-3" href="{% url 'account_login' %}">Log
-                In</a>
-
-            <!-- Paragraph -->
-            <p class="text-lg text-center mb-3">Or register to post your first recipe!
-            </p>
-
-            <!-- Sign Up Link -->
-            <a class="confirm block text-center mb-3" href="{% url 'account_signup' %}">Register</a>
-
-            <!-- Paragraph -->
-            <p class="text-lg text-center mb-3">Return home to see all recipes.
-            </p>
-
-            <!-- Home Link -->
-            <a href="{% url 'home' %}" class="cancel block text-center">Home</a>
-        </div>
-    </div>
-    {% endif %}
 </div>
+{% else %}
+<!-- If User Isn't Signed In -->
+<div class="hero-image"></div>
+<div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
+
+    <!-- Title -->
+    <h2 class="my-3 mx-£">Login to view your Foody Book!</h2>
+
+    <!-- Log In Link -->
+    <a class="btn btn-success btn-card mb-3" href="{% url 'account_login' %}">Log In</a>
+
+    <h4>Or</h4>
+    
+    <!-- Sign Up Link -->
+    <a class="btn btn-success btn-card mb-3" href="{% url 'account_signup' %}">Register</a>
+</div>
+{% endif %}
 {%endblock%}
