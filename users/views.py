@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
 from django.views.generic.list import ListView
-from .models import Profile
+from .models import Profile, User
 
 
 # Registration view
@@ -41,7 +41,7 @@ class RegisterView(View):
 
 # Profile view
 @login_required
-def profile(request):
+def my_profile(request):
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
         profile_form = UpdateProfileForm(
@@ -54,10 +54,31 @@ def profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request, 'Your profile is updated successfully')
-            return redirect(to='users-profile')
+            return redirect(to='my-profile')
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
+
+    return render(
+        request,
+        'users/profile.html',
+        {'user_form': user_form, 'profile_form': profile_form}
+        )
+
+
+# Profile view
+@login_required
+def profile(request, user_id):
+    # import pdb; pdb.set_trace()
+    if request.user.id == user_id:
+
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user.profile)
+
+    else:
+        user = User.objects.get(id=user_id)
+        user_form = UpdateUserForm(instance=user)
+        profile_form = UpdateProfileForm(instance=user.profile)
 
     return render(
         request,

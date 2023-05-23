@@ -84,13 +84,16 @@ class MyFoodyBook(generic.ListView):
     def get(self, request, *args, **kwargs):
 
         user = request.user
-        queryset = Recipe.objects.filter(
-            author=request.user.id).order_by(
-                '-created_on') | Recipe.objects.filter(likes=user).filter(
-                        status=1).order_by('-created_on')
         queryset_dict = {
-            'my_foody_book': queryset
-        }
+            }
+        if user.is_authenticated:
+            queryset = Recipe.objects.filter(
+                author=request.user.id).order_by(
+                    '-created_on') | Recipe.objects.filter(likes=user).filter(
+                            status=1).order_by('-created_on')
+            queryset_dict = {
+                'my_foody_book': queryset
+            }
 
         return render(
             request,
@@ -232,7 +235,7 @@ class RecipeCollect(View):
         return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
 
 
-# 404 View taken from
+# 404 Taken from
 # # https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317
 def page_404(request, exception):
     return render(request, "404.html")
