@@ -56,6 +56,7 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
+            messages.success(request, 'Thank you. Your comment is not awaiting approval')
         else:
             comment_form = CommentForm()
 

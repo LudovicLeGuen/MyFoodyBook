@@ -1,4 +1,5 @@
 from . import views
+from django.contrib import admin
 from django.urls import path
 
 # 404
@@ -6,6 +7,7 @@ handler404 = views.page_404
 
 urlpatterns = [
     path('', views.RecipeList.as_view(), name='home'),
+    path("admin/", admin.site.urls),
     path('publish_recipe/', views.PublishRecipe.as_view(),
          name='publish_recipe'),
     path('collect/<slug:slug>', views.RecipeCollect.as_view(),

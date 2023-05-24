@@ -3,15 +3,13 @@
 {% load cloudinary %}
 {% load crispy_forms_tags %}
 
+<!-- If User is Logged In -->
 {% if user.is_authenticated %}
 <!-- Post A Recipe Section -->
 <section class="container-fluid">
 
     <!-- Container -->
-    <div class="container mx-auto">
-
-        <!-- If User is Logged In -->
-        
+    <div class="container mx-auto">      
 
             <!-- If User Hasn't Posted A Recipe -->
             {% if posted is False %}

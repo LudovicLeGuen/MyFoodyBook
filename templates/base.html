@@ -57,12 +57,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>
                     </li>
+                    {% endif %}
                     {% if user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'admin' %}">Login</a>
+                        <a class="nav-link text-white" href="{% url 'admin:index' %}">Login</a>
                     </li>
                       {% endif %}
-                    {% endif %}
+                    
                 </ul>
 
                 <a href="{% url 'publish_recipe' %}"
