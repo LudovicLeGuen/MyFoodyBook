@@ -29,5 +29,6 @@
 },
 "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-}
+},
+"python.formatting.provider": "black"
 }

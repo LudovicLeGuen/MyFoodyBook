@@ -90,8 +90,8 @@ class MyFoodyBook(generic.ListView):
         if user.is_authenticated:
             queryset = Recipe.objects.filter(
                 author=request.user.id).order_by(
-                    '-created_on') | Recipe.objects.filter(likes=user).filter(
-                            status=1).order_by('-created_on')
+                '-created_on') | Recipe.objects.filter(likes=user).filter(
+                        status=1).order_by('-created_on')
             queryset_dict = {
                 'my_foody_book': queryset
             }

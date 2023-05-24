@@ -1,9 +1,10 @@
 # copied from Hana Belay
 # https://dev.to/earthcomfy/creating-a-django-registration-login-app-part-ii-3k6
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.views import View
 from .forms import RegisterForm
+from django.views.generic import DetailView
 from django.core.paginator import Paginator, EmptyPage
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth.decorators import login_required
@@ -38,6 +39,19 @@ class RegisterView(View):
 
         return render(request, self.template_name, {'form': form})
 
+
+class ShowUserProfile(DetailView):
+    model = Profile
+    template_name = 'users/user_profile.html'
+
+    def get_context_data(self, *args, **kwarg):
+        users = Profile.objects.all()        
+        context = super(ShowUserProfile, self).get_context_data( *args, **kwarg)
+
+        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+
+        context["page_user"] = page_user
+        return context
 
 # Profile view
 @login_required
