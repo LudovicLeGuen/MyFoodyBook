@@ -13,97 +13,65 @@
         <!-- If user is logged in -->
         {% if user.is_authenticated %}
 
-            <!--Verifies if user is the recipe author -->
-            {% if request.user == form.instance.author %}
+        <!--Verifies if user is the recipe author -->
+        {% if request.user == form.instance.author %}
 
-                <!-- If the form hasn't been submitted -->
-                {% if posted is False %}
+        <!-- If the form hasn't been submitted -->
+        {% if posted is False %}
 
-                <div class="">
+        <div class="">
 
-                    <!-- Heading -->
-                    <h1 class="text-center text-4xl mb-10">Edit Recipe</h1>
+            <!-- Heading -->
+            <h1 class="text-center text-4xl mb-10">Edit Recipe</h1>
 
-                    <!-- Author -->
-                    <h3 class="">Editing as: {{ user.username }}</h3>
+            <!-- Author -->
+            <h3 class="">Editing as: {{ user.username }}</h3>
 
-                    <!-- When form fails -->
-                    {% if failed %}
-                        <p class="text-lg">
-                            <strong>
-                            Unfortunately your edition failed. Make sure to fill all required fields.
-                            </strong>
-                        </p>
-                    {% endif %}
-
-                    <!-- Form -->
-                    <form enctype="multipart/form-data" class="" method="post" name="edit-recipe">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-
-                        <!-- Submit Button -->
-                        <button class="" type="submit">Submit</button>
-
-                        <!-- Cancel Button -->
-                        <button class="" type="button">Cancel</button>                        
-                    </form>
-
-                </div>
-
-                {% endif %}
-
-                <!-- Cancel Confirmation Pop-up -->
-                <div class="hidden pop-up-confirmation border border-black w-full md:w-7/12 lg:w-6/12 xl:w-7/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
-                    <h2 class="text-center text-4xl mb-10">Are you sure you want to cancel?</h2>
-                    <p class="text-lg text-center">Your form progress will be lost and you will be returned to your recipes page!</p>
-                    <p class="text-lg text-center mb-6">This cannot be undone!</p>
-                    <a class="confirm block text-center" href="{% url 'my_foody_book' %}">Yes take me to my recipes!</a>
-                    <button class="cancel block mt-3 text-center">No take me back!</button>
-                </div>
-
-            {% else %}
-
-            <!-- If user isn't the author of the recipe -->
-            <div class="not-user-recipe-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
-                <h2 class="text-center text-4xl mb-10">You can't edit a recipe that isn't yours!</h2>
-                <p class="text-lg text-center mb-3">View your recipe list on the My Recipes page!</p>
-                <a class="block confirm text-center confirm mb-3" href="{% url 'my_foody_book' %}">My Recipes</a>
-                <p class="text-lg text-center mb-3">Otherwise you can return to the homepage to view other recipes.</p>
-                <a href="{% url 'home' %}" class="cancel block text-center">No take me back home!</a>
-            </div>
-
+            <!-- When form fails -->
+            {% if failed %}
+            <p class="text-lg">
+                <strong>
+                    Unfortunately your edition failed. Make sure to fill all required fields.
+                </strong>
+            </p>
             {% endif %}
 
-        {% else %}
+            <!-- Form -->
+            <form enctype="multipart/form-data" class="" method="post" name="edit-recipe">
+                {{ form | crispy }}
+                {% csrf_token %}
 
-            <!-- If User Isn't Signed In -->
-            <div class="no-sign-up-notification border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
-                <h2 class="text-center text-4xl mb-10">You have to be logged in to edit a recipe!</h2>
-                <p class="text-lg text-center mb-3">If you have an account please log in!</p>
-                <a id="login-button" class="block text-center confirm mb-3" href="{% url 'account_login' %}">Log In</a>
-                <p class="text-lg text-center mb-3">Or you can sign up for an account today to post your own recipes!</p>
-                <a class="confirm block text-center mb-3" href="{% url 'account_signup' %}">Well sign me up!</a>
-                <p class="text-lg text-center mb-3">Otherwise you can return to the homepage to view other recipes.</p>
-                <a href="{% url 'home' %}" class="cancel block text-center">No take me back home!</a>
-            </div>
+                <!-- Submit Button -->
+                <button class="" type="submit">Submit</button>
 
+                <!-- Cancel Button -->
+                <button class="" type="button">Cancel</button>
+            </form>
+        </div>
         {% endif %}
-
-        {% if posted is True %}
-
-            <!-- Recipe Successfully Edited Notification -->
-            <div class="successful-form-submission border border-black w-full md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 bg-amber-100 p-6 mx-auto">
-                <h2 class="text-center text-4xl mb-10">Thank you for editing your recipe!</h2>
-                <p class="text-lg text-center mb-3">Your recipe has been successfully submitted</p>
-                <p class="text-lg text-center mb-3">Would you like to return to the home page or to your recipes?</p>
-                <a class="confirm block text-center mb-3" href="{% url 'my_foody_book' %}">Take me to my recipes!</a>
-                <a href="{% url 'home' %}" class="cancel block text-center">Take me back home!</a>
-            </div>
-
-        {% endif %}
-
     </div>
 </section>
+{% else %}
+
+<!-- If User Has Submitted Form Successfully -->
+{% if posted is True %}
+
+<!-- Form Successfully Posted Notification -->
+<div class="hero-image"></div>
+
+<div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
+
+    <!-- Title -->
+    <h2 class="my-3 mx-3">Your Recipe is updated!!</h2>
+
+    <!-- Post Recipe Link -->
+    <a class="btn btn-success btn-card mb-3" href="{% url 'home' %}">See all recipes</a>
+
+    <!-- Home Link -->
+    <a class="btn btn-secondary btn-card mb-3" href="{% url 'home' %}">To My Foody Book</a>
+
+</div>
+{% endif %}
 
 
 {% endblock %}
