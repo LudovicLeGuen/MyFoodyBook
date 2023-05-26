@@ -1,4 +1,15 @@
 # My-foody-book
+
+My Foody Book is a full stack web application where users can create and store their recipes and also collect other users one. 
+
+The purpose of the site is to offer a convenient platform to store recipes and also be inspired by others. 
+
+The audience is simple: Food lovers of all ages who love sharing and showing what they can do in a kitchen. 
+
+The Website is based on CRUD fucntionnality and allow users to create, read, update and delete their own recipes (except for admins). User can also collect and discard others users recipes. Finally, users can create and update their profiles.
+
+My Foody Book also provides an administration exclusively accessible by admins that can manage comments and moderate the platform.
+
 ![Abyss diving club on devices](assets/readme-files/wheel-of-fortune.PNG)
 
 [Click here to access live project](https://the-wheel-of-fortune.herokuapp.com/)
@@ -28,6 +39,15 @@
 ***
 
 ## Introduction
+My Foody Book is the 4th project for Code Institute's full stack development degree.
+The minimum requirements of this project are:
+* Use an Agile methodology to plan and design a Full-Stack Web application using an MVC framework and related contemporary technologies.
+* Implement a data model, application features and business logic to manage, query and manipulate data to meet given needs in a particular real-world domain.
+* Identify and apply authorisation, authentication and permission features in a Full-Stack web application solution.
+* Create manual and/or automated tests for a Full-Stack Web application using an MVC framework and related contemporary technologies
+* Use a distributed version control system and a repository hosting service to document, develop and maintain a Full-Stack Web application using an MVC framework and related contemporary technologies.
+* Deploy a Full-Stack Web application using an MVC framework and related contemporary technologies to a cloud-based platform
+* Understand and use object-based software concepts
 
 
 [Back to top ⇧](#Wheel-Of-Fortune)
