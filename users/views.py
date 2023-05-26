@@ -45,13 +45,14 @@ class ShowUserProfile(DetailView):
     template_name = 'users/user_profile.html'
 
     def get_context_data(self, *args, **kwarg):
-        users = Profile.objects.all()        
-        context = super(ShowUserProfile, self).get_context_data( *args, **kwarg)
+        users = Profile.objects.all()
+        context = super(ShowUserProfile, self).get_context_data(*args, **kwarg)
 
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
 
         context["page_user"] = page_user
         return context
+
 
 # Profile view
 @login_required
@@ -93,9 +94,9 @@ def profile(request, user_id):
         user_form = UpdateUserForm(instance=user)
         profile_form = UpdateProfileForm(instance=user.profile)
 
-    return render(request,'users/profile.html',
-        {'user_form': user_form, 'profile_form': profile_form}
-        )
+    return render(request, 'users/profile.html',
+                  {'user_form': user_form, 'profile_form': profile_form}
+                  )
 
 
 # All users list

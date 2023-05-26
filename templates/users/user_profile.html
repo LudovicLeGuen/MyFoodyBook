@@ -2,42 +2,40 @@
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
 <div class="container-fluid">
-    <div class="profile-container d-flex flex-column justify-content-center p-2">
-        <div>
-            <img class="rounded-circle account-img d-flex align-items-center justify-content-center"
-                src="{{ page_user.avatar.url }}" style="cursor: pointer;" />
-        </div>
-        {% if page_user.errors %}
-        <div class="alert alert-danger alert-dismissible" role="alert">
-            <div id="form_errors">
-                {% for key, value in page_user.errors.items %}
-                <strong>{{ value }}</strong>
-                {% endfor %}
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="card bg-light w-350 shadow rounded my-3" style="width: 25rem;">
+            <div class="card-body d-flex align-items-center justify-content-center">
+                {% if "placeholder" in page_user.avatar.url %}
+                <img class="rounded-circle"
+                    src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                    alt="Default User picture">
+                {% else %}
+                <img class="rounded-circle" src="{{ page_user.avatar.url }}" alt="User picture">
+                {% endif %}
             </div>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        {% endif %}
 
-        <div class="form-group">
-            <label class="small mb-1">Username:</label>
-            {{ page_user.user.username }}
-            <label class="small mb-1">Email:</label>
-            {{ page_user.user.email }}
+            <div class="d-flex align-items-center justify-content-center">
+            {% if page_user.user == user %}
+                <a class="btn btn-danger btn-card" href="{% url 'my-profile' %}">Edit</a>
+                {% endif %}
+            </div>
+
+            <div class="card-title text-center">
+                <h2>{{ page_user.user.username }}</h2>
+                <label>{{ page_user.nationality }}</label>
+            </div>
+
+            <div class=" card-text d-flex flex-column justify-content-center mx-2">
+                <div class="card rounded border border-dark d-flex justify-content-start mt-3 px-2 py-2">
+                    <h6>Bio</h6> {{ page_user.bio }}
+                </div>
+                
+                <div class="card rounded border border-dark d-flex justify-content-start my-3 px-2 py-2">
+                    <h6>Favorite Food</h6>{{ page_user.favorite_food }}
+                </div>
+            </div>
         </div>
-        <label class="small mb-1">Bio:</label> {{ page_user.bio }}
-        <label class="small mb-1">Favorite Food:</label> {{ page_user.favorite_food }}
-        <label class="small mb-1">Nationality:</label> {{ page_user.nationality }}
     </div>
 </div>
-<br><br>
-<button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
-<button type="reset" class="btn btn-dark btn-lg">Reset</button>
-</form>
-</div>
-</div>
-</div>
-
 
 {% endblock content %}

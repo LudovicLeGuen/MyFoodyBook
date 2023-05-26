@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="card bg-light w-350 shadow rounded my-3" style="width: 25rem;">
+            <div class="card-body d-flex align-items-center justify-content-center">
+                {% if "placeholder" in request.user.profile.avatar.url %}
+                <img class="rounded-circle"
+                    src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"
+                    alt="Default User picture">
+                {% else %}
+                <img class="rounded-circle" src="{{ request.user.profile.avatar.url }}" alt="User picture">
+                {% endif %}
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+
+                    <label class="my-1">Change Avatar:</label>
+                    {{ profile_form.avatar }}
+                </div>
+
+                <div class="card-title px-2">
+                    <h6>Username</h6>
+                    <label class="mb-2">{{ user_form.username }}</label>
+                    <h6>Nationality</h6>
+                    <label class=" mb-2">{{ profile_form.nationality }}</label>
+                    <h6>email</h6>
+                    <label class=" mb-2">{{ user_form.email }}</label>
+                </div>
+
+                <div class="px-2">
+                    <a class="btn btn-warning btn-card " href="#">Change Password</a>
+                </div>
+
+                <div class=" card-text d-flex flex-column justify-content-center mx-2">
+                    <div class="card rounded border border-dark d-flex justify-content-start mt-3 px-2 py-2">
+                        <h6>Bio</h6> {{ profile_form.bio }}
+                    </div>
+
+                    <div class="card rounded border border-dark d-flex justify-content-start my-3 px-2 py-2">
+                        <h6>Favorite Food</h6>{{ profile_form.favorite_food }}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around">
+                <button type="submit" class="btn btn-success btn-card mb-2">Save Changes</button>
+                <button type="reset" class="btn btn-danger btn-card mb-2">Reset</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
