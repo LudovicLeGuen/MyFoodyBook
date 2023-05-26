@@ -6,15 +6,11 @@
 
 {% load crispy_forms_tags %}
 
+        <!-- If user is logged in -->
+{% if user.is_authenticated %}
 <!-- Edit Recipe Section -->
 <section class="edit-recipe-section py-14 md:py-20 flex-1 flex flex-col items-center px-5">
     <div class="container mx-auto">
-
-        <!-- If user is logged in -->
-        {% if user.is_authenticated %}
-
-        <!--Verifies if user is the recipe author -->
-        {% if request.user == form.instance.author %}
 
         <!-- If the form hasn't been submitted -->
         {% if posted is False %}
@@ -72,6 +68,6 @@
 
 </div>
 {% endif %}
-
+{% endif %}
 
 {% endblock %}

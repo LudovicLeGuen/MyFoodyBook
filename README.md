@@ -71,8 +71,11 @@ The minimum requirements of this project are:
 * The admins can remove users
 * The admins need to moderate comments
 
-#### Dvelopment Methodology
+#### Development Methodology
 * The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
+![Github project](assets/readme-files/project.png)
+* All project database was base on the following Database Shema.
+![Github project](assets/readme-files/database.png)
 
 [Back to top ⇧](#My-foody-book)
 
