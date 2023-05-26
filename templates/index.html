@@ -43,7 +43,7 @@
 
                                         <!-- Profile without avatar-->
                                         {% if "placeholder" in recipe.avatar.url %}
-                                        <a href="{% url 'my-profile' %}"><img
+                                        <a href="{% url 'show-profile' userData.id %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
                                         

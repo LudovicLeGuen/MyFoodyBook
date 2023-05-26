@@ -15,7 +15,7 @@
             </div>
 
             <div class="d-flex align-items-center justify-content-center">
-            {% if page_user.user == user %}
+                {% if page_user.user == user %}
                 <a class="btn btn-danger btn-card" href="{% url 'my-profile' %}">Edit</a>
                 {% endif %}
             </div>
@@ -29,13 +29,136 @@
                 <div class="card rounded border border-dark d-flex justify-content-start mt-3 px-2 py-2">
                     <h6>Bio</h6> {{ page_user.bio }}
                 </div>
-                
+
                 <div class="card rounded border border-dark d-flex justify-content-start my-3 px-2 py-2">
                     <h6>Favorite Food</h6>{{ page_user.favorite_food }}
                 </div>
             </div>
         </div>
     </div>
+    <div>
+        {{ recipe.username }}
+        {% for recipe in recipes %}
+
+        <div class="col-md-4">
+
+            <!-- Card position-->
+            <div class="card shadow mb-4 rounded">
+                <div class="card-body">
+
+                    <!-- Recipe URL linked to the Image-->
+                    <a href="{% url 'recipe_details' recipe.slug %}">
+
+                        <!-- Recipe Image-->
+                        <div class="image-container">
+
+                            <!-- If no picture added by user-->
+                            {% if "placeholder" in recipe.recipe_image.url %}
+                            <img class="card-img-top rounded"
+                                src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                                alt="Exploding carrot">
+
+                            {% else %}
+
+                            <!-- With picure added by user-->
+                            <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
+
+                            {% endif %}
+
+                            <!-- Author avatar-->
+                            <div class="recipe-avatar">
+
+                                <!-- Profile without avatar-->
+                                {% if "placeholder" in recipe.avatar.url %}
+                                <a href="{% url 'my-profile' %}"><img
+                                        class="rounded-circle card-img mx-auto d-block border border-5"
+                                        src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+
+                                {% else %}
+                                <!-- Profile with avatar -->
+                                <a href="{% url 'my-profile' %}"><img
+                                        class="rounded-circle card-img mx-auto d-block border border-5"
+                                        src="{{ recipe.author.profile.avatar.url }}"></a>
+
+                                {% endif %}
+                                <div class="overlay rounded-circle border border-5 border-danger"></div>
+                            </div>
+
+                            <!-- Shared or Secret Status box -->
+                            <div class="card-status px-2">
+                                {% if recipe.author == user %}
+
+                                {% if recipe.status == 0 %}
+                                <p class="text-center">Secret <i class="fa-solid fa-mask"></i></p>
+
+                                {% else %}
+                                <p class="text-center">Shared <i class="fa-solid fa-share-from-square"></i></p>
+
+                                {% endif %}
+
+                                {% else %}
+                                <p class="text-center">Collected <i class="fa-solid fa-heart"></i></p>
+                                {% endif %}
+                            </div>
+                    </a>
+                </div>
+
+                <!-- URL linked to the text section-->
+                <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
+
+                    <!-- Recipe title-->
+                    <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
+
+                    <!-- Recipe Author-->
+                    <p class="author">By {{ recipe.author }}</p>
+
+                    <!-- horizontal line-->
+                    <hr />
+
+                    <!-- Recipe prep and cooking time section -->
+                    <div class="card-cooking-time">
+                        <p class="card-text"><i class="fa-solid fa-kitchen-set"></i> Preparation:
+                            {{ recipe.preping_time }} Min</p>
+                        <p class="card-text"><i class="fa-regular fa-hourglass-half"></i> Cooking:
+                            {{ recipe.cook_time }} Min</p>
+                    </div>
+
+                    <!-- Recipe excerpt with line control -->
+                    <p class="card-text line-clamp">{{ recipe.excerpt }}</p>
+                </a>
+
+                <!-- horizontal line-->
+                <hr />
+
+                <!-- Creation date and collected sections-->
+                <div class="d-flex justify-content-between my-2">
+                    <p class="card-text text-muted h6">{{ recipe.created_on }}
+
+                        <!-- Number of users who collected the recipe-->
+                    <div class="card-text text-muted h6">
+                        {% if recipe.status == 1 %}
+                        Collected by
+                        {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit and delete section-->
+            <div class="d-flex justify-content-around my-3">
+                {% if recipe.author == user %}
+                <a class="btn btn-success btn-card" href="{% url 'update_recipe' recipe.id%}" role="button">Edit</a>
+                <a class="btn btn-danger btn-card" href="{% url 'delete_recipe' recipe.id%}" role="button">Delete</a>
+
+                {% else %}
+                <button type="submit" class="btn btn-danger my-3" name="recipe_id" value="{{ recipe.slug }}"
+                    aria-label="Discard recipe button">
+                    Remove from my Foody Book
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>{% endfor %}
 </div>
 
 {% endblock content %}

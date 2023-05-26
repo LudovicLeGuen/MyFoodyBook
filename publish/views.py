@@ -56,7 +56,7 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
-            messages.success(request, 'Thank you. Your comment is not awaiting approval')
+            messages.success(request, 'Your comment is not awaiting approval')
         else:
             comment_form = CommentForm()
 
@@ -90,7 +90,8 @@ class MyFoodyBook(generic.ListView):
         if user.is_authenticated:
             queryset = Recipe.objects.filter(
                 author=request.user.id).order_by(
-                '-created_on') | Recipe.objects.filter(likes=user).filter(
+                '-created_on').filter(
+                        status=1) | Recipe.objects.filter(likes=user).filter(
                         status=1).order_by('-created_on')
             queryset_dict = {
                 'my_foody_book': queryset

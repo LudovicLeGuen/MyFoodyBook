@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
 from django.views.generic.list import ListView
 from .models import Profile, User
+from publish.models import Recipe
 
 
 # Registration view
@@ -40,6 +41,7 @@ class RegisterView(View):
         return render(request, self.template_name, {'form': form})
 
 
+# Show foodibookers profiles with their foodybook
 class ShowUserProfile(DetailView):
     model = Profile
     template_name = 'users/user_profile.html'
@@ -52,6 +54,13 @@ class ShowUserProfile(DetailView):
 
         context["page_user"] = page_user
         return context
+
+    def UserRecipeList(request, username):
+        user = get_object_or_404(User, username=username)
+        recipes = Recipe.object.filter(user=user).order_by(
+                '-created_on') | Recipe.objects.filter(likes=user).filter(
+                        status=1).order_by('-created_on')
+        return render(request, {'user': user, 'recipes': recipes})
 
 
 # Profile view
