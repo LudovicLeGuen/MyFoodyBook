@@ -50,21 +50,33 @@ The minimum requirements of this project are:
 * Understand and use object-based software concepts
 
 
-[Back to top ⇧](#Wheel-Of-Fortune)
+[Back to top ⇧](#My-foody-book)
 
 ## UX
 ### Ideal User Demographic
 
 ### User-Stories
 #### Frequent User Goals
-* 
+* Frequent users want to see the recipes they have created and collected
+* Frequent users want to log in with their usual credentials
+* Frequent users want to wee ne recipes
 
 #### New User Goals
-* 
+* New Users want to be able to see some of the content before registering
+* New users want to understand what the site is about with seconds
+* New users want to understand the funxtionalities quickly.
 
-[Back to top ⇧](#Wheel-Of-Fortune)
+#### Site Administrators
+* The admnistrators needs to control all aspects of the site
+* The admins can remove users
+* The admins need to moderate comments
 
-### Development-Planes
+#### Dvelopment Methodology
+* The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
+
+[Back to top ⇧](#My-foody-book)
+
+### Dvelopment-Planes
 
 
 #### Strategy
