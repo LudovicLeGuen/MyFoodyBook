@@ -9,7 +9,7 @@
 
         <!-- Heading -->
         <h1 class="text-center text-5xl mb-10 my-4">All Recipe</h1>
-        
+
         <!-- Recipes entry Column -->
         <div class="mx-auto px-5">
             <div class="row mx-5 mt-5">
@@ -49,13 +49,13 @@
                                         <a href="{% url 'show-profile' userData.id %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
-                                        
+
                                         {% else %}
                                         <!-- Profile with avatar -->
                                         <a href="{% url 'my-profile' %}"><img
                                                 class="rounded-circle card-img mx-auto d-block border border-5"
                                                 src="{{ recipe.author.profile.avatar.url }}"></a>
-                                        
+
                                         {% endif %}
                                         <div class="overlay rounded-circle border border-5 border-danger"></div>
                                     </div>
@@ -89,15 +89,23 @@
                         <!-- horizontal line-->
                         <hr />
 
-                         <!-- Creation date and collected sections-->
-                         <div class="d-flex justify-content-between my-2">
+                        <!-- Creation date and collected sections-->
+                        <div class="d-flex justify-content-between my-2">
                             <p class="card-text text-muted h6">{{ recipe.created_on }}
-                                <!-- Number of users who collected the recipe-->
 
+                                <!-- Number of users who collected the recipe-->
                             <div class="card-text text-muted h6">
                                 {% if recipe.status == 1 %}
-                                Collected by
-                                {{ recipe.number_of_likes }} Users <i class="fa-solid fa-heart"></i>
+
+                                {% if recipe.number_of_likes == 0 %}
+                                Not collected yet
+
+                                {% elif recipe.number_of_likes == 1 %}
+                                Collected once
+
+                                {% else %}
+                                Collected {{ recipe.number_of_likes }} times 
+                                {% endif %}
                                 {% endif %}
                             </div>
                         </div>

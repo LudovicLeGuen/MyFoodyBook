@@ -34,7 +34,7 @@
 
                             <!-- User avatar -->
                             <a href="{% url 'show-profile' userData.id %}"><img
-                                class="card-img mx-auto d-block border border-5"
+                                class="card-img mx-auto d-block border border-5 "
                                 src="{{ userData.avatar.url }}" alt="User picture"></a>
 
                             {% endif %}
@@ -42,11 +42,9 @@
                         </div>
 
                         <!-- Text Content -->
-                        <div>
-
+                        <div class="text-center border border-5 py-4">
                             <!-- User Name -->
-                            <h3 class="text-center ">{{ userData.user }}</h3>
-
+                            <h3 >{{ userData.user }}</h3>
                         </div>
                     </div>
                 </div>
