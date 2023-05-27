@@ -27,14 +27,14 @@
                             <!-- Placeholder -->
                             {% if "placeholder" in userData.avatar.url %}
                             <a href="{% url 'show-profile' userData.id %}"><img
-                                    class="card-img mx-auto d-block border border-5"
+                                    class="card-img mx-auto d-block border border-dark border-5"
                                     src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
 
                             {% else %}
 
                             <!-- User avatar -->
                             <a href="{% url 'show-profile' userData.id %}"><img
-                                class="card-img mx-auto d-block border border-5 "
+                                class="card-img mx-auto d-block border border-dark border-5 "
                                 src="{{ userData.avatar.url }}" alt="User picture"></a>
 
                             {% endif %}
@@ -42,7 +42,7 @@
                         </div>
 
                         <!-- Text Content -->
-                        <div class="text-center border border-5 py-4">
+                        <div class="text-center border border-dark border-5 py-4">
                             <!-- User Name -->
                             <h3 >{{ userData.user }}</h3>
                         </div>
