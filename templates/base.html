@@ -62,30 +62,32 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{% url 'admin:index' %}">Admin</a>
                     </li>
-                      {% endif %}
-                    
+                    {% endif %}
+
                 </ul>
 
                 <a href="{% url 'publish_recipe' %}"
-                    class="create-btn btn-lg border mr-1 hover:scale-105 hover:shadow">Create
+                    class="btn btn-success border mr-3 hover:scale-105 hover:shadow">Create
                     a Recipe</a>
 
             </div>
-            <!--Profile links-->
-            {% if user.is_authenticated %}
+            <div class="mx-3">
+                <!--Profile links-->
+                {% if user.is_authenticated %}
 
-            {% if "placeholder" in profile.avatar.url %}
-            <a href="{% url 'my-profile' %}"><img class="rounded-circle nav-avatar"
-                    src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"></a>
-            {% else %}
-            <a href="{% url 'my-profile' %}"><img class="rounded-circle nav-avatar"
-                    src="{{ request.user.profile.avatar.url }}" id="img"></a>
-            {% endif %}
+                {% if "placeholder" in profile.avatar.url %}
+                <a href="{% url 'my-profile' %}"><img class="rounded-circle nav-avatar"
+                        src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"></a>
+                {% else %}
+                <a href="{% url 'my-profile' %}"><img class="rounded-circle nav-avatar"
+                        src="{{ request.user.profile.avatar.url }}" id="img"></a>
+                {% endif %}
 
-            {% else %}
-            <a href="{% url 'users-register' %}"><img class="rounded-circle nav-avatar"
-                    src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"></a>
-            {% endif %}
+                {% else %}
+                <a href="{% url 'users-register' %}"><img class="rounded-circle nav-avatar"
+                        src="https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"></a>
+                {% endif %}
+            </div>
         </div>
     </nav>
     <!--Any flash messages pop up in any page because this is the base template-->

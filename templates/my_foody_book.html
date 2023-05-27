@@ -15,7 +15,7 @@
             {% for message in messages %}
 
             <!-- Message Title -->
-            <h2>{{ message }}</h2>
+            <h2 >{{ message }}</h2>
 
             {% endfor %}
         </div>
@@ -31,62 +31,64 @@
 
                     <!-- Card position-->
                     <div class="card shadow mb-4 rounded">
+                        <div class="card-body">
 
-                        <!-- Recipe URL linked to the Image-->
-                        <a href="{% url 'recipe_details' recipe.slug %}">
+                            <!-- Recipe URL linked to the Image-->
+                            <a href="{% url 'recipe_details' recipe.slug %}">
 
-                            <!-- Recipe Image-->
-                            <div class="image-container">
+                                <!-- Recipe Image-->
+                                <div class="image-container">
 
-                                <!-- If no picture added by user-->
-                                {% if "placeholder" in recipe.recipe_image.url %}
-                                <img class="card-img-top rounded"
-                                    src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
-                                    alt="Exploding carrot">
-
-                                {% else %}
-
-                                <!-- With picure added by user-->
-                                <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
-
-                                {% endif %}
-
-                                <!-- Author avatar-->
-                                <div class="recipe-avatar">
-
-                                    <!-- Profile without avatar-->
-                                    {% if "placeholder" in recipe.avatar.url %}
-                                    <a href="{% url 'my-profile' %}"><img
-                                            class="rounded-circle card-img mx-auto d-block border border-5"
-                                            src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+                                    <!-- If no picture added by user-->
+                                    {% if "placeholder" in recipe.recipe_image.url %}
+                                    <img class="card-img-top rounded"
+                                        src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                                        alt="Exploding carrot">
 
                                     {% else %}
-                                    <!-- Profile with avatar -->
-                                    <a href="{% url 'my-profile' %}"><img
-                                            class="rounded-circle card-img mx-auto d-block border border-5"
-                                            src="{{ recipe.author.profile.avatar.url }}"></a>
 
-                                    {% endif %}
-                                    <div class="overlay rounded-circle border border-5 border-danger"></div>
-                                </div>
-
-                                <!-- Shared or Secret Status box -->
-                                <div class="card-status px-2">
-                                    {% if recipe.author == user %}
-
-                                    {% if recipe.status == 0 %}
-                                    <p class="text-center">Secret <i class="fa-solid fa-mask"></i></p>
-
-                                    {% else %}
-                                    <p class="text-center">Shared <i class="fa-solid fa-share-from-square"></i></p>
+                                    <!-- With picure added by user-->
+                                    <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
 
                                     {% endif %}
 
-                                    {% else %}
-                                    <p class="text-center">Collected <i class="fa-solid fa-heart"></i></p>
-                                    {% endif %}
-                                </div>
-                        </a>
+                                    <!-- Author avatar-->
+                                    <div class="recipe-avatar">
+
+                                        <!-- Profile without avatar-->
+                                        {% if "placeholder" in recipe.avatar.url %}
+                                        <a href="{% url 'my-profile' %}"><img
+                                                class="rounded-circle card-img mx-auto d-block border border-5"
+                                                src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+
+                                        {% else %}
+                                        <!-- Profile with avatar -->
+                                        <a href="{% url 'my-profile' %}"><img
+                                                class="rounded-circle card-img mx-auto d-block border border-5"
+                                                src="{{ recipe.author.profile.avatar.url }}"></a>
+
+                                        {% endif %}
+                                        <div class="overlay rounded-circle border border-5 border-danger"></div>
+                                    </div>
+
+                                    <!-- Shared or Secret Status box -->
+                                    <div class="card-status px-2">
+                                        {% if recipe.author == user %}
+
+                                        {% if recipe.status == 0 %}
+                                        <p class="text-center">Secret <i class="fa-solid fa-mask"></i></p>
+
+                                        {% else %}
+                                        <p class="text-center">Shared <i class="fa-solid fa-share-from-square"></i></p>
+
+                                        {% endif %}
+
+                                        {% else %}
+                                        <p class="text-center">Collected <i class="fa-solid fa-heart"></i></p>
+                                        {% endif %}
+                                    </div>
+                            </a>
+                        </div>
 
                         <!-- URL linked to the text section-->
                         <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
@@ -120,20 +122,20 @@
                             <p class="card-text text-muted h6">{{ recipe.created_on }}
 
                                 <!-- Number of users who collected the recipe-->
-                            <div class="card-text text-muted h6">
-                                {% if recipe.status == 1 %}
-
-                                {% if recipe.number_of_likes == 0 %}
-                                Not collected yet
-
-                                {% elif recipe.number_of_likes == 1 %}
-                                Collected once
-
-                                {% else %}
-                                Collected {{ recipe.number_of_likes }} times
-                                {% endif %}
-                                {% endif %}
-                            </div>
+                                <div class="card-text text-muted h6">
+                                    {% if recipe.status == 1 %}
+    
+                                    {% if recipe.number_of_likes == 0 %}
+                                    Not collected yet
+    
+                                    {% elif recipe.number_of_likes == 1 %}
+                                    Collected once
+    
+                                    {% else %}
+                                    Collected {{ recipe.number_of_likes }} times 
+                                    {% endif %}
+                                    {% endif %}
+                                </div>
                         </div>
                     </div>
 
