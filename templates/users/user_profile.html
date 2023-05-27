@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center">
-                    {% if user.user == user %}
+                    {% if user == user.user %}
                     <a class="btn btn-success btn-card" href="{% url 'my-profile' %}">Edit</a>
                     {% endif %}
                 </div>

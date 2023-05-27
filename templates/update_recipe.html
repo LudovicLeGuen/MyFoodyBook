@@ -6,9 +6,9 @@
 
 {% load crispy_forms_tags %}
 
-<!-- If user is logged in -->
+
 <!-- Edit Recipe Section -->
-<section class="edit-recipe-section py-14 md:py-20 flex-1 flex flex-col items-center px-5">
+<section class="container-fluid">
     <div class="container mx-auto">
 
         <!-- If the form hasn't been submitted -->
@@ -40,30 +40,30 @@
                 <button class="btn btn-success btn-card my-3 max-3" type="submit">Submit</button>
 
                 <!-- Cancel Button -->
-                <button class="btn btn-danger btn-card my-3 max-3" type="button">Cancel</button>
+                <button class="btn btn-danger btn-card my-3 max-3" type="button" onclick="window.history.back()">Cancel</button>
             </form>
         </div>
     </div>
+
+    {% else %}
+
+    <!-- If User Has Submitted Form Successfully -->
+
+    <!-- Form Successfully Posted Notification -->
+
+    <div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
+
+        <!-- Title -->
+        <h2 class="my-3 mx-3">Your Recipe is updated!!</h2>
+
+        <!-- All Recipe Link -->
+        <a class="btn btn-success btn-card mb-3" href="{% url 'home' %}">All recipes</a>
+
+        <!-- foodybook Link -->
+        <a class="btn btn-warning btn-card mb-3" href="{% url 'my_foody_book' %}">My Foody Book</a>
+
+    </div>
+    {% endif %}
+
+    {% endblock %}
 </section>
-{% else %}
-
-<!-- If User Has Submitted Form Successfully -->
-
-<!-- Form Successfully Posted Notification -->
-<div class="hero-image"></div>
-
-<div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
-
-    <!-- Title -->
-    <h2 class="my-3 mx-3">Your Recipe is updated!!</h2>
-
-    <!-- All Recipe Link -->
-    <a class="btn btn-success btn-card mb-3" href="{% url 'home' %}">See all recipes</a>
-
-    <!-- foodybook Link -->
-    <a class="btn btn-secondary btn-card mb-3" href="{% url 'my_foody_book' %}">To My Foody Book</a>
-
-</div>
-{% endif %}
-
-{% endblock %}

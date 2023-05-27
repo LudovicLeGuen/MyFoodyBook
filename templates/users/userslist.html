@@ -8,10 +8,10 @@
     <div class="row">
 
         <!-- Heading -->
-        <h1 class="text-center text-4xl mb-10">All Foody Bookers</h1>
+        <h1 class="text-center text-5xl mb-10 my-4">All Foody Bookers</h1>
 
         <!-- Cards Container -->
-        <div class="mx-auto px-5">
+        <div class="mt-5 mx-auto px-5">
             <div class="row">
 
                 <!-- Profile Loop -->
@@ -48,7 +48,8 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:8 %}
+                
+                {% if forloop.counter|divisibleby:12 %}
             </div>
             <div div class="row ">
                 {% endif %}

@@ -45,7 +45,6 @@ class RegisterView(View):
 class ShowUserProfile(DetailView):
     model = Profile
     template_name = 'users/user_profile.html'
-    paginate_by = 8
 
     def get_context_data(self, *args, **kwarg):
         users = Profile.objects.all()
@@ -56,10 +55,13 @@ class ShowUserProfile(DetailView):
 
         context["user"] = page_user
         context["recipes"] = Recipe.objects.filter(author=user).filter(
-                        status=1).order_by('-created_on') | Recipe.objects.filter(
-                            likes=user).filter(status=1).order_by('-created_on')
+                        status=1).order_by(
+                            '-created_on') | Recipe.objects.filter(
+                            likes=user).filter(
+                                status=1).order_by('-created_on')
 
         return context
+
 
 # Profile view
 @login_required
@@ -109,7 +111,7 @@ def profile(request, user_id):
 # All users list
 def show_all_users(request, page=1):
     data = Profile.objects.all()
-    paginator = Paginator(data, 8)
+    paginator = Paginator(data, 12)
     try:
         data = paginator.page(page)
     except EmptyPage:

@@ -132,7 +132,7 @@
     <!-- Container -->
     <div class="container mx-auto">
         <div class="row">
-            <div class="shadow rounded mt-5 col">
+            <div class="shadow rounded mt-5 p-2 col">
 
                 <!-- Title -->
                 <h3 class="text-3xl mb-3">Ingredients</h2>
@@ -142,7 +142,7 @@
 
             </div>
 
-            <div class="shadow rounded mt-5 col">
+            <div class="shadow rounded p-2 mt-5 col">
 
                 <!-- Title -->
                 <h3 class="text-3xl mb-3">Recipe Steps</h2>
@@ -163,7 +163,7 @@
     <div class="shadow rounded my-5">
         <div class="row">
             <!-- Comments -->
-            <div class="col comments">
+            <div class="col comments p-2">
 
                 <!-- Title -->
                 <h3 class="text-3xl mb-10">Comments</h3>
@@ -172,7 +172,7 @@
                 {% if not comments %}
 
                 <!-- Paragraph -->
-                <p class="text-base mb-8">No comments yet! Be the first to post a comment!</p>
+                <p class="text-base mb-8">No comment yet! Be the first !</p>
 
                 {% endif %}
 
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Post A Comment Form -->
-            <div class="col">
+            <div class="col p-2">
 
                 <!-- Title -->
                 <h3 class="text-3xl mb-10">Post a comment</h3>
@@ -249,15 +249,9 @@
                     {% csrf_token %}
 
                     <!-- Submit Button -->
-                    <button class="bg-amber-400 primaryAction mt-3 comment-submit-button" type="submit">Submit</button>
+                    <button class="btn btn-success btn-card my-3 " type="submit">Submit</button>
 
                 </form>
-
-                <!-- If User Is Not Logged In -->
-                {% else %}
-
-                <!-- Paragraph -->
-                <p class="text-base">I'm sorry amigo, you have to be logged in to post a comment!</p>
 
                 {% endif %}
                 {% endif %}
