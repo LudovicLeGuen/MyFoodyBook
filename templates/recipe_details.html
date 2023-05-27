@@ -32,7 +32,7 @@
                 {% if user.is_authenticated %}
                 <div class="d-flex justify-content-around my-3">
                     {% if recipe.author == user %}
-                    <a class="btn btn-secondary btn-card my-3" href="{% url 'update_recipe' recipe.id%}"
+                    <a class="btn btn-success btn-card my-3" href="{% url 'update_recipe' recipe.id%}"
                         role="button">Edit</a>
                     <a class="btn btn-danger btn-card my-3" href="{% url 'delete_recipe' recipe.id%}"
                         role="button">Delete</a>

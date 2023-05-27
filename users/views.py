@@ -45,6 +45,7 @@ class RegisterView(View):
 class ShowUserProfile(DetailView):
     model = Profile
     template_name = 'users/user_profile.html'
+    paginate_by = 8
 
     def get_context_data(self, *args, **kwarg):
         users = Profile.objects.all()

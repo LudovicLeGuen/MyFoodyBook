@@ -205,12 +205,10 @@ i::before {
 }
 
 .view-recipe-img-container {
-    height: 100%;
-    width: 100%;
+
 }
 
 .recipe-like {
-
     position: absolute;
     top: 0px;
     right: 5px;
@@ -226,11 +224,10 @@ i::before {
 
 .recipe-img {
     position: relative;
-
 }
 
 .cover {
-    object-fit: cover;
     width: 100%;
-    height: 100%
+    height: 100%;
+    object-fit: cover;
 }
