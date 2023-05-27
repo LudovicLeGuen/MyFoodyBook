@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 {% if user.is_authenticated %}
 <div class="container-fluid">
@@ -27,7 +29,7 @@
 
                 <!-- Recipe Loop -->
                 {% for recipe in my_foody_book %}
-                <div class="col-md-4">
+                <div class="col-sm-12 col-lg-6 col-xl-4">
 
                     <!-- Card position-->
                     <div class="card shadow mb-4 rounded">
