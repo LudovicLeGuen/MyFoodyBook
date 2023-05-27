@@ -15,7 +15,7 @@
             {% for message in messages %}
 
             <!-- Message Title -->
-            <h2 >{{ message }}</h2>
+            <h2>{{ message }}</h2>
 
             {% endfor %}
         </div>
@@ -122,20 +122,20 @@
                             <p class="card-text text-muted h6">{{ recipe.created_on }}
 
                                 <!-- Number of users who collected the recipe-->
-                                <div class="card-text text-muted h6">
-                                    {% if recipe.status == 1 %}
-    
-                                    {% if recipe.number_of_likes == 0 %}
-                                    Not collected yet
-    
-                                    {% elif recipe.number_of_likes == 1 %}
-                                    Collected once
-    
-                                    {% else %}
-                                    Collected {{ recipe.number_of_likes }} times 
-                                    {% endif %}
-                                    {% endif %}
-                                </div>
+                            <div class="card-text text-muted h6">
+                                {% if recipe.status == 1 %}
+
+                                {% if recipe.number_of_likes == 0 %}
+                                Not collected yet
+
+                                {% elif recipe.number_of_likes == 1 %}
+                                Collected once
+
+                                {% else %}
+                                Collected {{ recipe.number_of_likes }} times
+                                {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
 
@@ -160,7 +160,6 @@
             <!-- Row creation loop after 3 cards-->
             {% if forloop.counter|divisibleby:3 %}
         </div>
-
         <div div class="row mx-5 mb-3">
             {% endif %}
             {% endfor %}
@@ -216,4 +215,5 @@
         <a class="btn btn-success btn-card mb-3" href="{% url 'account_signup' %}">Register</a>
     </div>
     {% endif %}
-    {%endblock%}
+</div>
+{%endblock%}

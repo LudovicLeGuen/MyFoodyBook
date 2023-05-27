@@ -41,7 +41,7 @@ class RegisterView(View):
         return render(request, self.template_name, {'form': form})
 
 
-# Show foodibookers profiles with their foodybook
+# Show foodybookers profiles with their foodybook
 class ShowUserProfile(DetailView):
     model = Profile
     template_name = 'users/user_profile.html'
@@ -51,17 +51,14 @@ class ShowUserProfile(DetailView):
         context = super(ShowUserProfile, self).get_context_data(*args, **kwarg)
 
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+        user = User.objects.get(username=page_user.user.username)
 
-        context["page_user"] = page_user
-        return context
-
-    def UserRecipeList(request, username):
-        user = get_object_or_404(User, username=username)
-        recipes = Recipe.object.filter(user=user).order_by(
+        context["user"] = page_user
+        context["recipes"] = Recipe.objects.filter(author=user).order_by(
                 '-created_on') | Recipe.objects.filter(likes=user).filter(
                         status=1).order_by('-created_on')
-        return render(request, {'user': user, 'recipes': recipes})
 
+        return context
 
 # Profile view
 @login_required
