@@ -54,9 +54,9 @@ class ShowUserProfile(DetailView):
         user = User.objects.get(username=page_user.user.username)
 
         context["user"] = page_user
-        context["recipes"] = Recipe.objects.filter(author=user).order_by(
-                '-created_on') | Recipe.objects.filter(likes=user).filter(
-                        status=1).order_by('-created_on')
+        context["recipes"] = Recipe.objects.filter(author=user).filter(
+                        status=1).order_by('-created_on') | Recipe.objects.filter(
+                            likes=user).filter(status=1).order_by('-created_on')
 
         return context
 

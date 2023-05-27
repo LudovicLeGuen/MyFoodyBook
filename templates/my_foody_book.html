@@ -148,10 +148,13 @@
                             role="button">Delete</a>
 
                         {% else %}
-                        <button type="submit" class="btn btn-danger" name="recipe_id" value="{{ recipe.slug }}"
-                            aria-label="Discard recipe button">
-                            Remove from my Foody Book
-                        </button>
+                        <form action="{% url 'recipe_collect' recipe.slug %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger" name="recipe_id" value="{{ recipe.slug }}"
+                                aria-label="Discard recipe button">
+                                Remove from my Foody Book
+                            </button>                        
+                        </form>
                         {% endif %}
                     </div>
                 </div>
