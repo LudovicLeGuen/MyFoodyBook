@@ -2,13 +2,12 @@
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
 <div class="container-fluid">
+
+    <!-- Heading -->
+    <h1 class="text-center text-5xl mb-10 my-4">{{ user.user.username }}'s Foody Book</h1>
     <div class="row">
-        <!-- Heading -->
-        <h1 class="text-center text-5xl mb-10 my-4">{{ user.user.username }}'s Foody Book</h1>
-    </div>
-    <div class="d-flex flex-sm-row align-items-start justify-content-center">
-        <div class="col-lg-3 d-flex justify-content-center">
-            <div class="card bg-light col-12 shadow rounded my-3" style="width: 25rem;">
+        <div class="col-xs-12 col-lg-3 d-flex justify-content-center align-items-start">
+            <div class="card bg-light col-12 shadow rounded my-3 mx-3">
                 <div class="card-body d-flex align-items-center justify-content-center">
                     {% if "placeholder" in user.avatar.url %}
                     <img class="rounded-circle"
@@ -41,111 +40,133 @@
                 </div>
             </div>
         </div>
-        <div class="mx-auto col-lg-9">
-            <div class="row mx-5 mt-1">
+        {% if recipes.count == 0 %}
+        <div class="mx-auto col-xs-12 col-lg-9">
+            <div class="bg-light border border-5 border-secondary rounded text-center">
 
-                <!-- Recipe Loop -->
-                {% for recipe in recipes %}
-                <div class="col-12 col-lg-6">
+                <!-- No recipe in the profile -->
+                <h2 class="my-3 mx-3">No Recipe</h2>
+                <h3>Unfortunately {{ user.user.username }} has not yet</h3>
+                <h3>created nor collected any recipe.</h3>
+                <!-- back to users list -->
+                <a class="btn btn-secondary btn-card mb-3" href="{% url 'users-list' %}">Users List</a>
 
-                    <!-- Card position-->
-                    <div class="card shadow mb-4 rounded">
-                        <div class="card-body">
+                <!-- Sign Up Link -->
+                <a class="btn btn-secondary btn-card mb-3" href="{% url 'home' %}">Home</a>
+            </div>
+            {% else %}
 
-                            <!-- Recipe URL linked to the Image-->
-                            <a href="{% url 'recipe_details' recipe.slug %}">
+            <div class=" col-xs-12 mx-auto col-lg-9 px-5">
+                <div class="row mt-1">
 
-                                <!-- Recipe Image-->
-                                <div class="image-container">
+                    <!-- Recipe Loop -->
+                    {% for recipe in recipes %}
+                    <div class="col-12 col-lg-6">
 
-                                    <!-- If no picture added by user-->
-                                    {% if "placeholder" in recipe.recipe_image.url %}
-                                    <img class="card-img-top rounded"
-                                        src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
-                                        alt="Exploding carrot">
+                        <!-- Card position-->
+                        <div class="card shadow mb-4 rounded">
+                            <div class="card-body">
 
-                                    {% else %}
+                                <!-- Recipe URL linked to the Image-->
+                                <a href="{% url 'recipe_details' recipe.slug %}">
 
-                                    <!-- With picure added by user-->
-                                    <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
+                                    <!-- Recipe Image-->
+                                    <div class="image-container">
 
-                                    {% endif %}
-
-                                    <!-- Author avatar-->
-                                    <div class="recipe-avatar">
-
-                                        <!-- Profile without avatar-->
-                                        {% if "placeholder" in recipe.avatar.url %}
-                                        <a href="{% url 'my-profile' %}"><img
-                                                class="rounded-circle card-img mx-auto d-block border border-5"
-                                                src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+                                        <!-- If no picture added by user-->
+                                        {% if "placeholder" in recipe.recipe_image.url %}
+                                        <img class="card-img-top rounded"
+                                            src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/Original_4313_exploding.veg.carrot.jpg?itok=RNVvEx15"
+                                            alt="Exploding carrot">
 
                                         {% else %}
-                                        <!-- Profile with avatar -->
-                                        <a href="{% url 'my-profile' %}"><img
-                                                class="rounded-circle card-img mx-auto d-block border border-5"
-                                                src="{{ recipe.author.profile.avatar.url }}"></a>
+
+                                        <!-- With picure added by user-->
+                                        <img class="card-img-top rounded" src=" {{ recipe.recipe_image.url }}">
 
                                         {% endif %}
-                                        <div class="overlay rounded-circle border border-5 border-danger"></div>
+
+                                        <!-- Author avatar-->
+                                        <div class="recipe-avatar">
+
+                                            <!-- Profile without avatar-->
+                                            {% if "placeholder" in recipe.avatar.url %}
+                                            <a href="{% url 'my-profile' %}"><img
+                                                    class="rounded-circle card-img mx-auto d-block border border-5"
+                                                    src="https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg"></a>
+
+                                            {% else %}
+                                            <!-- Profile with avatar -->
+                                            <a href="{% url 'my-profile' %}"><img
+                                                    class="rounded-circle card-img mx-auto d-block border border-5"
+                                                    src="{{ recipe.author.profile.avatar.url }}"></a>
+
+                                            {% endif %}
+                                            <div class="overlay rounded-circle border border-5 border-danger">
+                                            </div>
+                                        </div>
                                     </div>
-                            </a>
-                        </div>
+                                </a>
 
-                        <!-- URL linked to the text section-->
-                        <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
 
-                            <!-- Recipe title-->
-                            <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
+                                <!-- URL linked to the text section-->
+                                <a href="{% url 'recipe_details' recipe.slug %}" class="post-link">
 
-                            <!-- Recipe Author-->
-                            <p class="author">By {{ recipe.author }}</p>
+                                    <!-- Recipe title-->
+                                    <h2 class="card-title my-2 title-line-clamp">{{ recipe.title }}</h2>
 
-                            <!-- horizontal line-->
-                            <hr />
+                                    <!-- Recipe Author-->
+                                    <p class="author">By {{ recipe.author }}</p>
 
-                            <!-- Recipe prep and cooking time section -->
-                            <div class="card-cooking-time">
-                                <p class="card-text"><i class="fa-solid fa-kitchen-set"></i> Preparation:
-                                    {{ recipe.preping_time }} Min</p>
-                                <p class="card-text"><i class="fa-regular fa-hourglass-half"></i> Cooking:
-                                    {{ recipe.cook_time }} Min</p>
-                            </div>
+                                    <!-- horizontal line-->
+                                    <hr />
 
-                            <!-- Recipe excerpt with line control -->
-                            <p class="card-text line-clamp">{{ recipe.excerpt }}</p>
-                        </a>
+                                    <!-- Recipe prep and cooking time section -->
+                                    <div class="card-cooking-time">
+                                        <p class="card-text"><i class="fa-solid fa-kitchen-set"></i> Preparation:
+                                            {{ recipe.preping_time }} Min</p>
+                                        <p class="card-text"><i class="fa-regular fa-hourglass-half"></i> Cooking:
+                                            {{ recipe.cook_time }} Min</p>
+                                    </div>
 
-                        <!-- horizontal line-->
-                        <hr />
+                                    <!-- Recipe excerpt with line control -->
+                                    <p class="card-text line-clamp">{{ recipe.excerpt }}</p>
+                                </a>
 
-                        <!-- Creation date and collected sections-->
-                        <div class="d-flex justify-content-between my-2">
-                            <p class="card-text text-muted h6">{{ recipe.created_on }}
+                                <!-- horizontal line-->
+                                <hr />
 
-                                <!-- Number of users who collected the recipe-->
-                            <div class="card-text text-muted h6">
-                                {% if recipe.number_of_likes == 0 %}
-                                Not collected yet
+                                <!-- Creation date and collected sections-->
+                                <div class="d-flex justify-content-between my-2">
+                                    <p class="card-text text-muted h6">{{ recipe.created_on }}
 
-                                {% elif recipe.number_of_likes == 1 %}
-                                Collected once
+                                        <!-- Number of users who collected the recipe-->
+                                    <div class="card-text text-muted h6">
+                                        {% if recipe.number_of_likes == 0 %}
+                                        Not collected yet
 
-                                {% else %}
-                                Collected {{ recipe.number_of_likes }} times
-                                {% endif %}
+                                        {% elif recipe.number_of_likes == 1 %}
+                                        Collected once
+
+                                        {% else %}
+                                        Collected {{ recipe.number_of_likes }} times
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Row creation loop after 3 cards-->
-            {% if forloop.counter|divisibleby:3 %}
-        </div>
-        <div div class="row mx-5 mb-3">
-            {% endif %}
-            {% endfor %}
+
+                    <!-- Row creation loop after 3 cards-->
+                    {% if forloop.counter|divisibleby:2 %}
+                </div>
+                <div div class="row mb-3">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
