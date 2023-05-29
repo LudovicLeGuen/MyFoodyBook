@@ -54,22 +54,28 @@ The minimum requirements of this project are:
 
 ## UX
 ### Ideal User Demographic
+The users targeted have to be food lovers who enjoy sharing their ideas and creativity. 
+There will be 2 main category users
+Frequent food aficionados who love creating and sharing and want to store there recipes.
+New users who simply want to be inspired.
 
 ### User-Stories
 #### Frequent User Goals
 * Frequent users want to see the recipes they have created and collected
 * Frequent users want to log in with their usual credentials
-* Frequent users want to wee ne recipes
+* Frequent users want to see other users recipes
+* Frequent users want to manage their FoodyBook
 
 #### New User Goals
 * New Users want to be able to see some of the content before registering
-* New users want to understand what the site is about with seconds
-* New users want to understand the funxtionalities quickly.
+* New users want to understand what the site is about within seconds
+* New users want to understand the functionalities quickly.
 
 #### Site Administrators
 * The admnistrators needs to control all aspects of the site
 * The admins can remove users
 * The admins need to moderate comments
+* The admon needs to navigate between the site and admin easily.
 
 #### Development Methodology
 * The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
