@@ -79,33 +79,60 @@ New users who simply want to be inspired.
 
 #### Development Methodology
 * The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
-![Github project](assets/readme-files/project.png)
+![Github project](assets/readme-files/images/project.png)
 * All project database was base on the following Database Shema.
-![Github project](assets/readme-files/database.png)
+![Github project](assets/readme-files/images/database.png)
 
 [Back to top ⇧](#My-foody-book)
 
 ### Dvelopment-Planes
 
 
-#### Strategy
-
-    
 #### Scope
 
-#### Scope
+Now that we have established the goals of the website we can deduce the necessary features and content:
+* Required Content
+    * A quick description of the purpose of the site
+    * Recipes by users 
+    * Users profile
 
-<details>
-<summary>Pre game flowchart</summary>
-    
-![Pre Game](assets/readme-files/pre-game.png)
-
-</details> 
-
+* Required functionality
+    * A form to register
+    * A form to login with the same credentials
+    * A form to log out
+    * An automatic profile creation
+    * A form to update a profile
+    * A page to show a profile
+    * a page to show all profiles
+    * A form to create a recipe
+    * A form to update a recipe
+    * A form to delete a recipe
+    * A Page to display all recipes
+    * A method to collect a recipe
+    * A method to discard a recipe
+    * A method to comment a recipe
+    * An administration to manage the site
 
 [Back to top ⇧](#My-foody-book)
 
-### Design
+#### Structure
+
+The website will consist of 1 pages. 
+
+   1. **A Home page** with the purpose of the site for first users and the recipe content or the logged in users.     
+   2. **A Foodybook page** with your created and collected recipes.
+   3. **A Register page** to register on the site.
+   4. **A Log in page** to log in with your credentials.
+   5. **A log out page** to confirm if users want to leave.
+   6. **A profile page** to show your Bio and your recipe too.This will act as the user foodybook
+   7. **An update profile page** to change your bio
+   8. **An all users page** to show all users.
+   9. **An create recipe page** to create your recipes
+   10. **An update recipe page** to update your recipes
+   11. **A delete recipe page** to confirm your action
+   12. **An admin page** for admins
+
+With the needed structure defined the developper has created the following Wireframes.
 
 [Back to top ⇧](#My-foody-book)
 
@@ -114,55 +141,55 @@ New users who simply want to be inspired.
 <details>
 <summary>Home Page</summary>
     
-![Homepage](assets/readme-files/home-my-foody-book.png)
+![Homepage](assets/readme-files/images/home-my-foody-book.png)
 
 </details> 
 
 <details>
 <summary>All recipe page</summary>
     
-![Homepage](assets/readme-files/all-recipe.png)
+![Homepage](assets/readme-files/images/all-recipe.png)
 
 </details> 
 
 <details>
 <summary>Landing page</summary>
     
-![Landing-Page](assets/readme-files/landing-page.png)
+![Landing-Page](assets/readme-files/images/landing-page.png)
 
 </details> 
 
 <details>
 <summary>Profile page</summary>
     
-![Profile](assets/readme-files/profile-page.png)
+![Profile](assets/readme-files/images/profile-page.png)
 
 </details> 
 
 <details>
 <summary>Login</summary>
     
-![Login](assets/readme-files/login.png)
+![Login](assets/readme-files/images/login.png)
 
 </details> 
 <details>
 <summary>Register page</summary>
     
-![Register](assets/readme-files/register-page.png)
+![Register](assets/readme-files/images/register-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page</summary>
     
-![Foody-book](assets/readme-files/my-foody-book-page.png)
+![Foody-book](assets/readme-files/images/my-foody-book-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page no recipe</summary>
     
-![Foody-book](assets/readme-files/Home-My-Foody-book-no-recipe.png)
+![Foody-book](assets/readme-files/images/Home-My-Foody-book-no-recipe.png)
 
 </details> 
 
