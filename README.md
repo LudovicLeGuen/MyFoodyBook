@@ -134,6 +134,7 @@ The website will focus on the following target audience
     * The comments
     * the possibility to delete and manage all of the above
 
+[Back to top ⇧](#My-foody-book)
 
 #### Scope
 
@@ -188,55 +189,55 @@ With the needed structure defined the developper has created the following Wiref
 <details>
 <summary>Home Page</summary>
     
-![Homepage](assets/readme-files/images/home-my-foody-book.png)
+![Homepage](assets/readme-files/images/wireframes/home-my-foody-book.png)
 
 </details> 
 
 <details>
 <summary>All recipe page</summary>
     
-![Homepage](assets/readme-files/images/all-recipe.png)
+![Homepage](assets/readme-files/images/wireframes/all-recipe.png)
 
 </details> 
 
 <details>
 <summary>Landing page</summary>
     
-![Landing-Page](assets/readme-files/images/landing-page.png)
+![Landing-Page](assets/readme-files/images/wireframes/landing-page.png)
 
 </details> 
 
 <details>
 <summary>Profile page</summary>
     
-![Profile](assets/readme-files/images/profile-page.png)
+![Profile](assets/readme-files/images/wireframes/profile-page.png)
 
 </details> 
 
 <details>
 <summary>Login</summary>
     
-![Login](assets/readme-files/images/login.png)
+![Login](assets/readme-files/images/wireframes/login.png)
 
 </details> 
 <details>
 <summary>Register page</summary>
     
-![Register](assets/readme-files/images/register-page.png)
+![Register](assets/readme-files/images/wireframes/register-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page</summary>
     
-![Foody-book](assets/readme-files/images/my-foody-book-page.png)
+![Foody-book](assets/readme-files/images/wireframes/my-foody-book-page.png)
 
 </details> 
 
 <details>
 <summary>My Foody Book page no recipe</summary>
     
-![Foody-book](assets/readme-files/images/Home-My-Foody-book-no-recipe.png)
+![Foody-book](assets/readme-files/images/wireframes/Home-My-Foody-book-no-recipe.png)
 
 </details> 
 
