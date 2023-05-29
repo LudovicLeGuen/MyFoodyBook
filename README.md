@@ -79,13 +79,21 @@ New users who simply want to be inspired.
 
 #### Development Methodology
 * The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
+
+<details>
+<summary>![Github project](assets/readme-files/images/project.png)</summary>
 ![Github project](assets/readme-files/images/project.png)
+</details> 
 
 * All project database was base on the following Database Shema.
-![Github project](assets/readme-files/images/myFoodyBook.png)
+
+<details>
+<summary>![Database Schema](assets/readme-files/images/project.png)</summary>
+* All project database was base on the following Database Shema.
+![Database Schema](assets/readme-files/images/myFoodyBook.png)
 
 [Back to top ⇧](#My-foody-book)
-
+</details>
 ### Development-Planes
 
 The website has to answer the aforementioned needs of all users types and therefore must contain a a variety of CRUD finctionality for the recipes and a user profile management system. Furthrmoe, a simple yet intuitive collection method of recipe must be omplemented. Finally, an interactivity must be created trhough a comment section.
