@@ -61,8 +61,6 @@ class ShowUserProfile(DetailView):
                                 status=1).order_by('-created_on')
 
         return context
-
-
 # Profile view
 @login_required
 def my_profile(request):
