@@ -85,7 +85,54 @@ New users who simply want to be inspired.
 
 [Back to top ⇧](#My-foody-book)
 
-### Dvelopment-Planes
+### Development-Planes
+
+The website has to answer the aforementioned needs of all users types and therefore must contain a a variety of CRUD finctionality for the recipes and a user profile management system. Furthrmoe, a simple yet intuitive collection method of recipe must be omplemented. Finally, an interactivity must be created trhough a comment section.
+
+
+#### Strategy
+The website will focus on the following target audience
+* Audience
+    * New Users
+    * Frequent users
+    * Food lovers with creativity
+    * Curious people 
+    * Serious cooks with the need to store content.
+    
+* Demographic
+    * Adults 
+    * Young adults
+    * Independant adults
+    * Beginner cooks
+    * Artistic and creative people
+    
+* Psycho Characteristics
+    * Sociable
+    * Epicurian
+    * Curious
+    * Food knowledge
+
+* The Users must find thisinformation:
+    * The name of the recipe
+    * The time it takes to cook it
+    * The ingredients
+    * The number of people it feeds
+    * The steps to cook the dish
+    * A picture of the dish
+    * The number of people who collected it
+    * The author of the recipe
+    * The profile of the author
+    * The possibility to Log in Log out or register
+    * the possibility to post comments
+    * A view of the previous comments
+
+    
+* The Administrator has to receive these information:
+    * The name of the users
+    * The profile of the users
+    * The Recipes
+    * The comments
+    * the possibility to delete and manage all of the above
 
 
 #### Scope
