@@ -80,8 +80,9 @@ New users who simply want to be inspired.
 #### Development Methodology
 * The development followed an Agile methodology on the [Foody Book github Project](https://github.com/users/LudovicLeGuen/projects/4 "Link to the Foody Book github Project")
 ![Github project](assets/readme-files/images/project.png)
+
 * All project database was base on the following Database Shema.
-![Github project](assets/readme-files/images/database.png)
+![Github project](assets/readme-files/images/myFoodyBook.png)
 
 [Back to top ⇧](#My-foody-book)
 
