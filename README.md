@@ -10,9 +10,9 @@ The Website is based on CRUD fucntionnality and allow users to create, read, upd
 
 My Foody Book also provides an administration exclusively accessible by admins that can manage comments and moderate the platform.
 
-![Abyss diving club on devices](assets/readme-files/wheel-of-fortune.PNG)
+![My Foody Book on devices](assets/readme-files/wheel-of-fortune.PNG)
 
-[Click here to access live project](https://the-wheel-of-fortune.herokuapp.com/)
+[Click here to access live project](/)
 ## Table of contents
 1. [Introduction](#Introduction)
 2. [UX](#UX)
@@ -186,6 +186,8 @@ With the needed structure defined the developper has created the following Wiref
 
 ### Skeleton
 
+With the structure above the designer has created the following wireframes on [Balsamiq Wireframes](https://balsamiq.com) to visualize the website. The developper, being also the designer, took the wireframes as a base and took the initiative to modify certain things along the way.
+
 <details>
 <summary>Home Page</summary>
     
@@ -243,6 +245,63 @@ With the needed structure defined the developper has created the following Wiref
 
 [Back to top ⇧](#My-foody-book)
 
+### Design
+#### Colour Scheme
+The color scheme used was kept as simple as possible with the use of the Bootstrap colors.
+<details>
+<summary>Palette</summary>
+
+![Abyss Dive Club logo](assets/readme-files/images/palette.png)
+
+</details>
+
+
+<details>
+<summary>Favicon</summary>
+
+![Abyss Dive Club logo](assets/readme-files/images/favicon.png)
+
+</details>
+
+
+<details>
+<summary>Favicon</summary>
+
+![My Foody Book Favicon](assets/images/dive-logo.jpg)
+
+</details>
+    
+The logo colors are white and #1666AF. 
+
+The Generator used `#1666AF` as a reference point and produced this result
+    
+<details>
+ 
+<summary>Colour Palette</summary>
+
+![Colour Palette](assets/readme-files/palette.png)
+
+</details> 
+
+Colors where used as such:  
+* The backround of the website is completely white. The designer has mmade this choice to keep the website very clean and simple.
+* Text in all the website is using the `#1666AF` color to follow the logo color.
+* The `#3D80BC` color is used as a Background color for the Join buttons in both the home page and he sign up page
+* The `#0F63AD` color is used for the form and for the Footer social links
+
+</details>
+
+#### Typography
+The developper has chosen Lato and Oswald fron [Google Fonts](https://fonts.google.com/).
+
+Lato was used on the body of the website while Oswald was used on the h1, h2, h3 Titles and in the cover of the hero image.
+
+#### Imagery
+The images used on the website are sourced from various websites which are listed in the [Credits section](##Credits) of this README.
+
+[Back to top ⇧](#Abyss-diving-club)
+
+
 ## Features
 ### Existing Features
 
@@ -250,6 +309,9 @@ With the needed structure defined the developper has created the following Wiref
 [Back to top ⇧](#My-foody-book)
 
 ### Features to Implement in the future
+
+The website would need the following features in the feature.
+
 
 [Back to top ⇧](#My-foody-book)
 

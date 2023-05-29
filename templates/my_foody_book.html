@@ -4,8 +4,26 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="container-fluid">
 
+
+<!-- If there are no recipes in the list -->
+{% if my_foody_book.count == 0 %}
+<div class="hero-image"></div>
+<div class="mx-auto container">
+    <div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
+
+        <!-- Title -->
+        <h3 class="my-3 mx-3">You haven't got a recipe yet!</h2>
+
+            <!-- Post Recipe Link -->
+            <a class="btn btn-success btn-card mb-3 max-3" href="{% url 'publish_recipe' %}">Post a Recipe</a>
+
+            <!-- Home Link -->
+            <a class="btn btn-secondary btn-card mb-3" href="{% url 'home' %}">Collect Recipes</a>
+    </div>
+</div>
+<div class="container-fluid">
+    {% else %}
     <!-- Container -->
     <div class="row">
         <!-- Heading -->
@@ -155,7 +173,7 @@
                             <button type="submit" class="btn btn-warning" name="recipe_id" value="{{ recipe.slug }}"
                                 aria-label="Discard recipe button">
                                 Remove from my Foody Book
-                            </button>                        
+                            </button>
                         </form>
                         {% endif %}
                     </div>
@@ -184,41 +202,25 @@
             </ul>
         </nav>
         {% endif %}
-
-        <!-- If there are no recipes in the list -->
-        {% if my_foody_book.count == 0 %}
-        <div class="hero-image"></div>
-        <div class="mx-auto container">
-            <div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
-
-                <!-- Title -->
-                <h3 class="my-3 mx-3">You haven't got a recipe yet!</h2>
-
-                    <!-- Post Recipe Link -->
-                    <a class="btn btn-success btn-card mb-3 max-3" href="{% url 'publish_recipe' %}">Post a Recipe</a>
-
-                    <!-- Home Link -->
-                    <a class="btn btn-secondary btn-card mb-3" href="{% url 'home' %}">Collect Recipes</a>
-            </div>
-        </div>
         {% endif %}
     </div>
-    {% else %}
-    <!-- If User Isn't Signed In -->
-    <div class="hero-image"></div>
-    <div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
+</div>
+{% else %}
+<!-- If User Isn't Signed In -->
+<div class="hero-image"></div>
+<div class="jumbotron bg-light border border-5 border-secondary rounded text-center">
 
-        <!-- Title -->
-        <h2 class="my-3 mx-£">Login to view your Foody Book!</h2>
+    <!-- Title -->
+    <h2 class="my-3 mx-£">Login to view your Foody Book!</h2>
 
-        <!-- Log In Link -->
-        <a class="btn btn-success btn-card mb-3" href="{% url 'account_login' %}">Log In</a>
+    <!-- Log In Link -->
+    <a class="btn btn-success btn-card mb-3" href="{% url 'account_login' %}">Log In</a>
 
-        <h4>Or</h4>
+    <h4>Or</h4>
 
-        <!-- Sign Up Link -->
-        <a class="btn btn-success btn-card mb-3" href="{% url 'account_signup' %}">Register</a>
-    </div>
-    {% endif %}
+    <!-- Sign Up Link -->
+    <a class="btn btn-success btn-card mb-3" href="{% url 'account_signup' %}">Register</a>
+</div>
+{% endif %}
 </div>
 {%endblock%}
