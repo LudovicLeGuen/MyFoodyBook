@@ -260,59 +260,64 @@ The color scheme used was kept as simple as possible with the use of the Bootstr
 <details>
 <summary>Palette</summary>
 
-![Abyss Dive Club logo](assets/readme-files/images/palette.png)
+![Foody-book](assets/readme-files/images/palette.png)
 
 </details>
-
+Favicon
 
 <details>
 <summary>Favicon</summary>
 
-![Abyss Dive Club logo](assets/readme-files/images/favicon.png)
+![Foody-book](assets/readme-files/images/favicon.png)
 
 </details>
-
-
-<details>
-<summary>Favicon</summary>
-
-![My Foody Book Favicon](assets/images/dive-logo.jpg)
-
-</details>
-    
-The logo colors are white and #1666AF. 
-
-The Generator used `#1666AF` as a reference point and produced this result
-    
-<details>
  
-<summary>Colour Palette</summary>
-
-![Colour Palette](assets/readme-files/palette.png)
-
-</details> 
-
-Colors where used as such:  
-* The backround of the website is completely white. The designer has mmade this choice to keep the website very clean and simple.
-* Text in all the website is using the `#1666AF` color to follow the logo color.
-* The `#3D80BC` color is used as a Background color for the Join buttons in both the home page and he sign up page
-* The `#0F63AD` color is used for the form and for the Footer social links
-
-</details>
-
 #### Typography
-The developper has chosen Lato and Oswald fron [Google Fonts](https://fonts.google.com/).
+The developper has chosen Roboto from [Google Fonts](https://fonts.google.com/).
 
-Lato was used on the body of the website while Oswald was used on the h1, h2, h3 Titles and in the cover of the hero image.
 
 #### Imagery
 The images used on the website are sourced from various websites which are listed in the [Credits section](##Credits) of this README.
 
-[Back to top ⇧](#Abyss-diving-club)
+[Back to top ⇧](#My-foody-book)
 
 
 ## Features
 ### Existing Features
+#### Navbar
+
+![Foody-book](assets/readme-files/images/navbar/navbar 1.PNG)
+![Foody-book](assets/readme-files/images/navbar/admin_navbar.PNG)
+![Foody-book](assets/readme-files/images/navbar/burger_navbar.PNG)
+![Foody-book](assets/readme-files/images/navbar/expanded_navbar.PNG)
+![Foody-book](assets/readme-files/images/navbar/navbar_loggedout.PNG)
+
+#### Foody Book Page
+
+![Foody-book](assets/readme-files/images/action_menu.PNG)
+
+#### Recipe
+
+![Foody-book](assets/readme-files/images/create_recipe.PNG)
+![Foody-book](assets/readme-files/images/edit_recipe.PNG)
+![Foody-book](assets/readme-files/images/recipe_details.PNG)
+![Foody-book](assets/readme-files/images/comment_section.PNG)
+![Foody-book](assets/readme-files/images/collect_button.PNG)
+![Foody-book](assets/readme-files/images/collected tag.PNG)
+![Foody-book](assets/readme-files/images/collection-tag.PNG)
+![Foody-book](assets/readme-files/images/discard_button.PNG)
+![Foody-book](assets/readme-files/images/edit_recipe.PNG)
+
+#### Profile
+
+![Foody-book](assets/readme-files/images/profile_no_recipe.png)
+![Foody-book](assets/readme-files/images/foodybookers.PNG)
+![Foody-book](assets/readme-files/images/foodybooker_profile.png)
+
+
+#### Confirmation
+![Foody-book](assets/readme-files/images/logout_confirmation.png)
+![Foody-book](assets/readme-files/images/delete_recipe.png)
 
 
 [Back to top ⇧](#My-foody-book)
@@ -375,8 +380,7 @@ Deploying on Heroky required the following:
 
 * once the app built (a minute or two needed)click "View" to access the site.
    
-[Back to top ⇧](#My-foody-book)
-
+git add 
 ## Credits 
 ### Code 
 The developer has consulted countless times Stack Overflow and W3Schools in ordeer to build the game.
