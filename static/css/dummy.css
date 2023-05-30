@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+{
+    background-color: #ffffff !important;
+}
+
+.brand {
+    font-family: Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
+/* hero image in index.html*/
+.hero-image {
+    background: url(https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=1600) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation bar */
+.nav-avatar {
+    max-height: 50px;
+}
+
+
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.create-btn {
+    background-color: #dde7de;
+    color: #221c42;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+/* Recipe Card*/
+.card {
+    border: none;
+    background-color: #fcfcfd;
+}
+
+.image-container {
+    position: relative;
+}
+
+.recipe-avatar {
+    position: absolute;
+    left: 5;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.card-status {
+    position: absolute;
+    left: 0;
+    top: 90%;
+    margin: 0 auto;
+    bottom: 0;
+    width: 105px;
+    height: 25px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.btn-card {
+    width: 150px;
+}
+
+/* adds a slight opacity to ava tars*/
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+    pointer-events: none;
+}
+
+.recipe-avatar:hover .overlay {
+    opacity: 0.3;
+}
+
+.card-cooking-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* adds 3 dots when title is too long*/
+.title-line-clamp {
+    height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* adds 3 dots when line is too long*/
+.line-clamp {
+    height: 70px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* zoom effect on hover*/
+.card {
+    transition: transform .2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.author {
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.post-link:hover,
+.page-link {
+    color: #445261;
+}
+
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-signup {
+    background-color: #23BBBB;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.card-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #7BD4CC;
+}
+
+i::before {
+    background: transparent;
+}
+
+/* Profile*/
+
+/* Recipe Details */
+
+.recipe-container {
+    display: inline-grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+
+.view-recipe-img-container {
+    height: 100%;
+    width: 100%;
+}
+
+.recipe-like {
+
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+#collect-icon {
+    color: #198754;
+}
+
+#collected-icon {
+    color: #DC3545;
+}
+
+.recipe-img {
+    position: relative;
+
+}
+
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%
+}
