@@ -482,7 +482,6 @@ Deploying on Heroky required the following:
 
 * once the app built (a minute or two needed)click "View" to access the site.
    
-git add 
 ## Credits 
 ### Code 
 The developer has consulted countless times Stack Overflow and W3Schools in ordeer to build the game.
