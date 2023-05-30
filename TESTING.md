@@ -48,7 +48,7 @@
 
 [Back to top ⇧](#My-foody-book---Testing)
 ## Manual Testing
-### Login Logout Register
+### Login, Logout, Register
 * LogIn
 
      ![Inserting Names](assets/testing-files/user-name.png) 
@@ -62,8 +62,8 @@
      ![Rules](assets/testing-files/rules-negative.png)
      ![Rules](assets/testing-files/rules.png)
 
-### Phase 2 The game
-* Creating and displaying the Mystery Sentence
+### Create, Delete, Update, See a recipe
+* Creating recipe
 
      ![Mystery Sentence](assets/testing-files/mystery-sentence.png)
 
@@ -87,9 +87,13 @@
 
      ![Consonant](assets/testing-files/consonant-test.png) 
 
+### Update Profile
+
 * Verify the consonant
 
      ![Consonant](assets/testing-files/verification.png) 
+
+### Update FoodyBook
 
 * Consonant already guessed
 
@@ -101,41 +105,16 @@
 
 * Print consonant
 
-     ![Print](assets/testing-files/print.png) 
+### Update FoodyBook
 
-* Calculate turn earning
+* Consonant already guessed
 
-     ![Calculate Earnings](assets/testing-files/counts.png) 
-     ![Calculate Earnings](assets/testing-files/results.png)
+     ![Consonant](assets/testing-files/guessed.png) 
 
-* 3 choices after correct guess
+* No more consonant to chose
 
-     ![Choices](assets/testing-files/choice.png) 
+     ![No more consonant](assets/testing-files/no-consonant.png)
 
-* buy a vowel
-
-     ![Vowel](assets/testing-files/vowel-money.png)
-
-* Not enough money to buy Vowel
-
-     ![Cannot buy Vowel](assets/testing-files/not-enough.png)
-
-* guess sentence
-
-     ![Guess sentence](assets/testing-files/not-enough.png)
-
-* Winning round
-
-     ![Winning a round](assets/testing-files/winning-round.png)
-
-* Last round
-
-     ![Last round](assets/testing-files/final-round.png)
-
-* Winning Game
-
-     ![Winning the game](assets/testing-files/money-winning.png) 
-     ![Winning the game](assets/testing-files/end.png)
 
 [Back to top ⇧](#My-foody-book---Testing)
 
@@ -155,13 +134,36 @@
 | user app views    | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
 
 * CSS validator
-![CSS validation](aassets/readme-files/images/tests/css_validator.PNG)
+![CSS validation](assets/readme-files/images/tests/css_validator.PNG)
 
 * Javascript
 My javascript is a few lines long.
 I tested it on [esprima](https://esprima.org/image.png)
 
-![CSS validation](aassets/readme-files/images/tests/javascript.png)
+![CSS validation](assets/readme-files/images/tests/javascript.png)
+
+* HTML
+
+| Page                |  Result                                                                    | Comment|
+| :---                |      :---:                                                                 | :---:  |
+| Profile.html        | ![publish app url](assets/readme-files/images/tests/publish_urls.PNG)      | pass   |
+| register.html       | ![publish app admin](assets/readme-files/images/tests/publish_admin.PNG)   | pass   |
+| user_profile.html   | ![publish app forms](assets/readme-files/images/tests/publish_forms.PNG)   | pass   |
+| userlist.html       | ![publish app views](assets/readme-files/images/tests/publish_vews.PNG)    | pass   |
+| 404.html            | ![user app url](assets/readme-files/images/tests/users_urls.PNG)           | pass   |
+| base.html           | ![user app signals](assets/readme-files/images/tests/users_signals.PNG)    | pass   |
+| delete_recipe.html  | ![user app models](assets/readme-files/images/tests/users_model.PNG)       | pass   |
+| index.html          | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+| my_foodyBook.html   | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+| publish_recipe.html | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+| recipe_details.html | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+| update_recipe.html  | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+
+
+* Lighthouse
+
+
+* Javascript
 
 
 [Back to top ⇧](#My-foody-book---Testing)
