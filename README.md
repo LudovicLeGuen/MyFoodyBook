@@ -174,7 +174,7 @@ Now that we have established the goals of the website we can deduce the necessar
 
 #### Structure
 
-The website will consist of 1 pages. 
+The website will consist of 12 pages. 
 
    1. **A Home page** with the purpose of the site for first users and the recipe content or the logged in users.     
    2. **A Foodybook page** with your created and collected recipes.
@@ -256,20 +256,18 @@ With the structure above the designer has created the following wireframes on [B
 
 ### Design
 #### Colour Scheme
+
 The color scheme used was kept as simple as possible with the use of the Bootstrap colors.
 <details>
 <summary>Palette</summary>
-
 ![Foody-book](assets/readme-files/images/palette.png)
-
 </details>
+
 Favicon
 
 <details>
 <summary>Favicon</summary>
-
 ![Foody-book](assets/readme-files/images/favicon.png)
-
 </details>
  
 #### Typography
@@ -283,40 +281,79 @@ The images used on the website are sourced from various websites which are liste
 
 
 ## Features
-### Existing Features
+### Existing 
+
 #### Navbar
 
-![Foody-book](assets/readme-files/images/navbar/navbar 1.PNG)
-![Foody-book](assets/readme-files/images/navbar/admin_navbar.PNG)
-![Foody-book](assets/readme-files/images/navbar/burger_navbar.PNG)
-![Foody-book](assets/readme-files/images/navbar/expanded_navbar.PNG)
+* The logged in navbar
+![Foody-book](assets/readme-files/images/navbar/navbar.PNG)
+
+* The logged out navbar
 ![Foody-book](assets/readme-files/images/navbar/navbar_loggedout.PNG)
+
+* The admin navbar
+![Foody-book](assets/readme-files/images/navbar/admin_navbar.PNG)
+
+* The small device navbar
+![Foody-book](assets/readme-files/images/navbar/burger_navbar.PNG)
+
+* The expanded navbar
+![Foody-book](assets/readme-files/images/navbar/expanded_navbar.PNG)
+
 
 #### Foody Book Page
 
+* The Foody Book action menu 
 ![Foody-book](assets/readme-files/images/action_menu.PNG)
 
 #### Recipe
 
+* The create recipe button in the navbar
 ![Foody-book](assets/readme-files/images/create_recipe.PNG)
+
+* The edit recipe menu
 ![Foody-book](assets/readme-files/images/edit_recipe.PNG)
+
+* The recipe view
 ![Foody-book](assets/readme-files/images/recipe_details.PNG)
-![Foody-book](assets/readme-files/images/comment_section.PNG)
-![Foody-book](assets/readme-files/images/collect_button.PNG)
-![Foody-book](assets/readme-files/images/collected tag.PNG)
-![Foody-book](assets/readme-files/images/collection-tag.PNG)
-![Foody-book](assets/readme-files/images/discard_button.PNG)
+
+* The Edit recipe view
 ![Foody-book](assets/readme-files/images/edit_recipe.PNG)
+
+* The comment section in the recipe
+![Foody-book](assets/readme-files/images/comment_section.PNG)
+
+* The collect button
+![Foody-book](assets/readme-files/images/collect_button.PNG)
+
+* The collect tag when recipe is collected
+![Foody-book](assets/readme-files/images/collected tag.PNG)
+
+* The collect tag when recipe is not collected
+![Foody-book](assets/readme-files/images/collection-tag.PNG)
+
+* The discard recipe button
+![Foody-book](assets/readme-files/images/discard_button.PNG)
+
 
 #### Profile
 
-![Foody-book](assets/readme-files/images/profile_no_recipe.png)
-![Foody-book](assets/readme-files/images/foodybookers.PNG)
+* Profile 
 ![Foody-book](assets/readme-files/images/foodybooker_profile.png)
+
+* All Profile 
+![Foody-book](assets/readme-files/images/foodybookers.PNG)
+
+* Profile with no recipe
+![Foody-book](assets/readme-files/images/profile_no_recipe.png)
 
 
 #### Confirmation
+
+* Log out confirmation 
 ![Foody-book](assets/readme-files/images/logout_confirmation.png)
+
+* Delete recipe confirmation 
 ![Foody-book](assets/readme-files/images/delete_recipe.png)
 
 
@@ -324,28 +361,93 @@ The images used on the website are sourced from various websites which are liste
 
 ### Features to Implement in the future
 
-The website would need the following features in the feature.
+The website would need the following features in the feature:
+* Search  
+* Categories for the recipes 
+* Allergens 
+* Latest Recipe view 
+* Most collected view 
+* Top profiles 
 
 
 [Back to top ⇧](#My-foody-book)
 
 ## Issues and Bugs 
-Several issues were encountered during developpement but the most troublesome are listed below.
+The development of the site was a continuous chain of bug and issues. The recording of those issues would probably be longer than the actual development (which took foerver BTW). 
+Issues were mainly writing errors that threw minors errors, or tiny mistakes in the HTML. Nevertheless, here are the main issues that the developper encountered.
 
-**Bankrupt would reset the player overall gains instead of the player round earnings** 
+**The hero page would not stay centered**
+The developper has decided to use a single hero page for all the messages on the site. The page had to fully cover the page and have a singfle centered jumbotron contianing the message. 
+The Page has oftentimes been a challenge because of the placement of the div inthe HTML. Each HTML contains several if statements and having the jumbotron before, inside or outisde those statements made a differnce. 
+
+**Bootstrap would not respond in certain pages**
+It took sometime for the developper to understand Bootstrap and apply it confidently. ine of the main issues the developper had was understanding the necessaity of the first row. This hard erned lesson cost him several trials and waste of time on debugging. 
+
+**Passing information between apps**
+The developper has decided to have two apps for the website: 
+-publish
+-users
+Passing information on template using the 2 apps has been particularly diificult for the developper. Several Tutoring intervention were necessary. So much so that the developement has not been completed and more work remains. The time management has been a real struggle for the deelopper. 
 
 ### Unfixed Bugs 
+
+There are 3 bugs known to the developper.
+**The user avatar** 
+The logged in user avatar in the top right corner changes when a recipe author avatar on a recipe card is a placeholder. The bug is understood. Both user avatar and author avatar are ruled by the exact same if statement. If a placeholder is in the object image field, a default picture appears. 
+
+**Recipe duplicates** 
+When a user consults a foody booker profile, some recipes might be dupliacted. This is due to the number of times a r3ecipe has been collected. If the recipe is collected 2 times, the card appears twice. If the recipe is collected 3 times, it appears 3 times and so on. 
+The class based function filtering the query has been a challenge for the developper. Even though the developper went through tutoring for a fix, he could not find the solution. 
+
+**User profile redirection**
+The developper simply did not have time to incorporate a sound variable passing in each page through class based functions of the author recipe. 
+As such, only the Users page redirects to the correct foodybooker. 
+The authors avatars on each recipe card are actually bugged. They all redirect to the logged in user. 
+
 
 [Back to top ⇧](#My-foody-book)
 
 ## Technologies Used
 ### Main Languages Used
-* Python3
-### Frameworks, Libraries & Programs Used
-- [Heroku](https://heroku.com/ "Link to Heroku") was used to deploy the game.
-- [GitPod](https://gitpod.io/ "Link to GitPod homepage") was used for writing, commiting, and pushing code.
-- [GitHub](https://github.com/ "Link to GitHub")
-- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage") was used to verify responsiveness and to create the top picture of this README.md
+* HTML5
+* CSS3
+* Python
+* Javascript
+
+### Framework
+* Django
+
+### Sofwares
+* [Heroku](https://heroku.com/ "Link to Heroku") was used to deploy the website.
+* [CodeAnywhere](https://app.codeanywhere.com/ "Link to Codeanywhere homepage") was used for writing, commiting, and pushing code.
+* [GitHub](https://github.com/ "Link to GitHub") was used as repository of the site.
+* [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage") was used to verify responsiveness and to create the top picture of this README.md
+* [ElephantSQL](https://customer.elephantsql.com/ "Link to ElephantSQL") was used as a PostgreSQL database.
+* [Balsamiq](https://balsamiq.com// "Link to balsamiq") was used for wireframes.
+* [Slack](https://slack.com/ "Link to Slack") was used to communicate with my fellow Code institute students and alumni.
+* [Lucid-Charts](https://lucid.app/documents#/documents?folder_id=recent"Link to Lucid Charts) was used to create the database schemes.
+* [Google-Fonts](https://fonts.google.com/ "Link to google font") was used to get the Roboto font.
+* [Google-dev-tools](https://heroku.com/ "Link to google dev tools") was used to test, develop and debug thes site on the fly.
+* [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/ "Link to Lighthouse") was used to test performances and compliance.
+
+### Libraries
+* django.contrib.admin
+* django.contrib.auth',
+* django.contrib.contenttypes',
+* django.contrib.sessions',
+* django.contrib.messages',
+* django.contrib.sites',
+* allauth',
+* allauth.account',
+* allauth.socialaccount',
+* cloudinary_storage',
+* django_summernote',
+* django.contrib.staticfiles',
+* cloudinary',
+* crispy_forms',
+* django_extensions',
+* publish',
+* users',
 
 [Back to top ⇧](#My-foody-book)
 
@@ -384,15 +486,17 @@ git add
 ## Credits 
 ### Code 
 The developer has consulted countless times Stack Overflow and W3Schools in ordeer to build the game.
-The code inspired by other developpers is commented directly in the code.
+The development choices were HEAVILY inspired by [Viva la nacho](https://viva-la-nacho.herokuapp.com/ "Viva la nacho ") by Matthey Hurrell, a fellow Code Institute student.
+Also, The Code Institute "i Think Therefore I blog" course was a solid reference. 
 
 [Back to top ⇧](#My-foody-book)
 
 ## Acknowledgements
 I would like to thank:
-* My wife  for her patience and her kind words when I was in doubt.
-* my mentor, Seun, for her counseling and her contagious enthusiasm and love for coding.
-* my fellow coding students of Code institue who have been invaluable on Slack.
+* My wife Dominika for her patience, support and tests to help me do as much as I could between my 3 jobs. 
+* My mentor, Seun, for her counseling and help.
+* My fellow coding students of Code institue who have been invaluable on Slack.
+* And last but most definitely not the least.... TUTORING!!!!!! I would not have had a chance without them. I spent so much time thre that I believe i have had a chat with every sibgle on eof them.
 
 [Back to top ⇧](#My-foody-book)
 
