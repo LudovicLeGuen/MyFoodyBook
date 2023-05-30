@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-{
+body {
     background-color: #ffffff !important;
 }
 
@@ -56,7 +56,7 @@
 
 .recipe-avatar {
     position: absolute;
-    left: 5;
+    left: 5px;
     right: 0;
     margin: 0 auto;
     bottom: 0;
@@ -214,7 +214,7 @@ i::before {
 .recipe-like {
 
     position: absolute;
-    top: 0px;
+    top: 0;
     right: 5px;
 }
 

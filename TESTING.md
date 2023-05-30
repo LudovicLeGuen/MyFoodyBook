@@ -1,4 +1,4 @@
-# Wheel-Of-Fortune - Testing 
+# My-foody-book - Testing 
 
 [Main README.md file](/README.md)
 
@@ -17,32 +17,36 @@
 
 ## Testing User Stories
 #### Frequent User Goals:
-* As a frequent user, I want a game that resembles the original wheel of fortune game play.
-     * The game rules are identical to the original TV show
-     * A host presents the game (Mr Boty).
-     * Players turn a wheel
+* As a frequent user want to see the recipes they have created and collected
+     * The foody book page allows users to see their own published, secret and collected recipes
+     * the user can see all tehir published recipes in the All recipe page
 
-* * As a frequent user, I want a challenging game.
-     * The game can become sometimes difficult, especially with samll sentences
-     * The randomness of the wheel can sometimes flip the situation and make a winner a loser.
+* As a frequent user want to log in with their usual credentials
+     * The credentials are stored if necessary.
+     * The the credentials are always the same to log in
      
-* As a frequent user, I want to have new experiences and discover new things when playing.
-     * There are more almost 1000 sentences to play with. 
-     * Mr Boty has different interactions with the players according to the situation.
+* As a frequent user want to see other users recipes
+     * All recipes are visible in the All Recipe page. 
+     * The user can also watch other users foodybook to see their published recvipes and collection
+
+* As a frequent users want to manage their FoodyBook
+     * All recipes can be updated, deleted or created everywhere on the site
+     * Any recipe can be managed according to the users status (author or reader)
 
 #### New User Goals:
-* As a new user, I want the commands to be clear.
-     * Each necessary action for the player is clearly described by the system. If an entry is wrong, the game tells it. 
-     * The players always see the most important features.
+* As a New Users want to be able to see some of the content before registering
+     * A message explain sthe purpose of the site
+     * The foody bookers page is visible
 
-* As a new user, I want to understand the rules.
-     * The rules are simply explained and are skippable. 
+* As a New users want to understand what the site is about within seconds
+     * A clear message explains the purpose of the site. 
 
-* As a new user, I want a fun experience.
-     * The game is quite challenging at times and unpredictable. 
-     * 2 players compete.
+* As a new users want to understand the functionalities quickly..
+     * The functions are pretty clear and pretty simple. 
+     * Only very pages and very vew functionalities help keep things simple
+     * the buttons on the recipes are also clear to understand
 
-[Back to top](#Wheel-Of-Fortune---Testing)
+[Back to top ⇧](#My-foody-book---Testing)
 ## Manual Testing
 ### Phase 1 The pre game
 * Inserting players name
@@ -133,15 +137,23 @@
      ![Winning the game](assets/testing-files/money-winning.png) 
      ![Winning the game](assets/testing-files/end.png)
 
-[Back to top](#Wheel-Of-Fortune---Testing)
+[Back to top ⇧](#My-foody-book---Testing)
 
 ## Automated Testing
 ### Code Validation
 * PEP8 CI Python Linter 
+| Page  | Result | Comment|
+| :---         |     :---:      |          :---:  |
+|publish app url |![publish app url](assets/readme-files/images/tests/publish_urls.PNG)     | pass    |
+|publish app admin | ![publish app admin](assets/readme-files/images/tests/publish_admin.PNG)      | pass     |
+|publish app forms |![publish app forms](assets/readme-files/images/tests/publish_forms.PNG)     | pass    |
+|publish app views | ![publish app views](assets/readme-files/images/tests/publish_vews.PNG)      | pass     |
+|user app url  |![user app url](assets/readme-files/images/tests/users_urls.PNG)     | pass    |
+|user app signals | ![user app signals](assets/readme-files/images/tests/users_signals.PNG)      | pass     |
+|user app models |![user app models](assets/readme-files/images/tests/users_model.PNG)     | pass    |
+|user app views | ![user app views](assets/readme-files/images/tests/publish_vews.PNGassets/readme-files/images/tests/users_view.PNG)      | pass     |
 
-![PEP8 CI Python Linter](assets/testing-files/python-validator.PNG)
-
-[Back to top](#Wheel-Of-Fortune---Testing)
+[Back to top ⇧](#My-foody-book---Testing)
 
 ## User testing 
 Special thanks to the following who tested and gave me their feedback and ideas to improve the game:
