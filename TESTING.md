@@ -48,16 +48,16 @@
 
 [Back to top ⇧](#My-foody-book---Testing)
 ## Manual Testing
-### Phase 1 The pre game
-* Inserting players name
+### Login Logout Register
+* LogIn
 
      ![Inserting Names](assets/testing-files/user-name.png) 
 
-* Asking for the number of round
+* Logout
 
      ![Inserting Names](assets/testing-files/round-input.png)
 
-* Asking for the rules
+* Register
 
      ![Rules](assets/testing-files/rules-negative.png)
      ![Rules](assets/testing-files/rules.png)
@@ -142,16 +142,27 @@
 ## Automated Testing
 ### Code Validation
 * PEP8 CI Python Linter 
-| Page  | Result | Comment|
-| :---         |     :---:      |          :---:  |
-|publish app url |![publish app url](assets/readme-files/images/tests/publish_urls.PNG)     | pass    |
-|publish app admin | ![publish app admin](assets/readme-files/images/tests/publish_admin.PNG)      | pass     |
-|publish app forms |![publish app forms](assets/readme-files/images/tests/publish_forms.PNG)     | pass    |
-|publish app views | ![publish app views](assets/readme-files/images/tests/publish_vews.PNG)      | pass     |
-|user app url  |![user app url](assets/readme-files/images/tests/users_urls.PNG)     | pass    |
-|user app signals | ![user app signals](assets/readme-files/images/tests/users_signals.PNG)      | pass     |
-|user app models |![user app models](assets/readme-files/images/tests/users_model.PNG)     | pass    |
-|user app views | ![user app views](assets/readme-files/images/tests/publish_vews.PNGassets/readme-files/images/tests/users_view.PNG)      | pass     |
+
+| Page              |  Result                                                                    | Comment|
+| :---              |      :---:                                                                 | :---:  |
+| publish app url   | ![publish app url](assets/readme-files/images/tests/publish_urls.PNG)      | pass   |
+| publish app admin | ![publish app admin](assets/readme-files/images/tests/publish_admin.PNG)   | pass   |
+| publish app forms | ![publish app forms](assets/readme-files/images/tests/publish_forms.PNG)   | pass   |
+| publish app views | ![publish app views](assets/readme-files/images/tests/publish_vews.PNG)    | pass   |
+| user app url      | ![user app url](assets/readme-files/images/tests/users_urls.PNG)           | pass   |
+| user app signals  | ![user app signals](assets/readme-files/images/tests/users_signals.PNG)    | pass   |
+| user app models   | ![user app models](assets/readme-files/images/tests/users_model.PNG)       | pass   |
+| user app views    | ![user app views](assets/readme-files/images/tests/users_view.PNG)         | pass   |
+
+* CSS validator
+![CSS validation](aassets/readme-files/images/tests/css_validator.PNG)
+
+* Javascript
+My javascript is a few lines long.
+I tested it on [esprima](https://esprima.org/image.png)
+
+![CSS validation](aassets/readme-files/images/tests/javascript.png)
+
 
 [Back to top ⇧](#My-foody-book---Testing)
 
