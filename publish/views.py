@@ -238,6 +238,6 @@ class RecipeCollect(View):
 
 
 # 404 Taken from
-# # https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317
+# https://levelup.gitconnected.com/django-customize-404-error-page-72c6b6277317
 def page_404(request, exception):
     return render(request, "404.html")
