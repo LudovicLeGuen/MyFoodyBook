@@ -50,14 +50,14 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-#ALLOWED_HOSTS = [
- #   '8000-ludovicleguen-myfoodyboo-82enu74fec.us2.codeanyapp.com',
-  #  'localhost',
- #   os.environ.get('my-foody-book.herokuapp.com')
-#]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'my-foody-book.herokuapp.com',
+    '127.0.0.1',
+    'localhost',
+    '8000-ludovicleguen-myfoodyboo-82enu74fec.us2.codeanyapp.com'
+    ]
 
-
+CORS_ALLOWED_ORIGINS = ['https://my-foody-book.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,7 +78,6 @@ INSTALLED_APPS = [
     'publish',
     'users',
 ]
-
 
 SITE_ID = 1
 
