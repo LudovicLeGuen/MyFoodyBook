@@ -234,7 +234,7 @@ class RecipeCollect(View):
         else:
             recipe.likes.add(request.user)
 
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
 
 
 # 404 Taken from
